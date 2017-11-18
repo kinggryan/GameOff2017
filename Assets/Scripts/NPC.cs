@@ -6,10 +6,12 @@ public class NPC : MonoBehaviour {
 
 	float talkingDistance = 0.33f;
 	PlayerMovementController player;
+	ConversationManager conversationManager;
 
 	// Use this for initialization
 	void Start () {
 		player = Object.FindObjectOfType<PlayerMovementController> ();
+		conversationManager = Object.FindObjectOfType<ConversationManager> ();
 	}
 	
 	// Update is called once per frame
@@ -22,6 +24,6 @@ public class NPC : MonoBehaviour {
 	}
 
 	void StartConversation() {
-		Debug.Log ("Blah blah blah");
+		conversationManager.StartConversation ();
 	}
 }
