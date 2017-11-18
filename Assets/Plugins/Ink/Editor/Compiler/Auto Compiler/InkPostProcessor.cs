@@ -1,4 +1,4 @@
-﻿// Automatically creates JSON files from an ink placed within the Assets/Ink folder.
+// Automatically creates JSON files from an ink placed within the Assets/Ink folder.
 using UnityEngine;
 using UnityEditor;
 using System;
@@ -156,7 +156,7 @@ namespace Ink.UnityIntegration {
 
 		private static void PostprocessInklecate (string inklecateFileLocation) {
 			Debug.Log("Inklecate updated. Recompiling all Ink files...");
-			InkEditorUtils.RecompileAll();
+			InkCompiler.RecompileAll();
 		}
 
 		private static void PostprocessInkFiles (List<string> importedInkAssets) {

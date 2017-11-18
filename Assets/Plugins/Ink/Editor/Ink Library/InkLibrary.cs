@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Diagnostics;
+using UnityEditorInternal;
 using Debug = UnityEngine.Debug;
 using Ink.Runtime;
 
@@ -208,12 +209,12 @@ namespace Ink.UnityIntegration {
 			return items;
 		}
 
-		public static InkCompiler.CompilationStackItem GetCompilationStackItem (Process process) {
+		public static InkCompiler.CompilationStackItem GetCompilationStackItem (string inkAbsoluteFilePath) {
 			foreach(var x in Instance.compilationStack) {
-				if(x.process == process) 
+				if(x.inkAbsoluteFilePath == inkAbsoluteFilePath) 
 					return x;
 			}
-			Debug.LogError("Fatal Error compiling Ink! No file found! Please report this as a bug. "+process);
+			Debug.LogError("Fatal Error compiling Ink! No file found! Please report this as a bug. "+inkAbsoluteFilePath);
 			return null;
 		}
 

@@ -1,9 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEditor;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using Ink.Runtime;
 using Debug = UnityEngine.Debug;
 
@@ -19,22 +18,9 @@ namespace Ink.UnityIntegration {
 //		public class StoryState {
 //		}
 		public bool attached {get; private set;}
-
-		TextAsset _storyJSONTextAsset;
-		TextAsset storyJSONTextAsset {
-			get {
-				return _storyJSONTextAsset;
-			} set {
-				_storyJSONTextAsset = value;
-				if (_storyJSONTextAsset != null) {
-					string fullJSONFilePath = InkEditorUtils.UnityRelativeToAbsolutePath(AssetDatabase.GetAssetPath(storyJSONTextAsset));
-					currentStoryJSONLastEditDateTime = File.GetLastWriteTime(fullJSONFilePath);
-				}
-			}
-		}
-		string storyJSON;
-		DateTime currentStoryJSONLastEditDateTime;
-
+		
+		private TextAsset storyJSONTextAsset;
+		private string storyJSON;
 		public Story story {get; private set;}
 		private TextAsset _storyStateTextAsset;
 		public TextAsset storyStateTextAsset {
@@ -166,9 +152,9 @@ namespace Ink.UnityIntegration {
 		}
 
 		void Play (TextAsset storyJSONTextAsset) {
-			this.storyJSONTextAsset = storyJSONTextAsset;
 			if(!InkEditorUtils.CheckStoryIsValid(storyJSONTextAsset.text, out errors))
 				return;
+			this.storyJSONTextAsset = storyJSONTextAsset;
 			storyJSON = this.storyJSONTextAsset.text;
 			PlayInternal();
 		}
@@ -304,8 +290,8 @@ namespace Ink.UnityIntegration {
 		void DisplayHeader () {
 			if(attached) {
 				EditorGUILayout.BeginHorizontal(EditorStyles.toolbar);
-				GUILayout.Label(new GUIContent("Attached", "This story reference has been attached from elsewhere"));
-				if (GUILayout.Button(new GUIContent("Detach", "Detach from the loaded external story"), EditorStyles.toolbarButton)) {
+				GUILayout.Label("Attached");
+				if (GUILayout.Button("Detach", EditorStyles.toolbarButton)) {
 					Detach();
 				}
 				EditorGUILayout.EndHorizontal();
@@ -316,18 +302,13 @@ namespace Ink.UnityIntegration {
 				if(EditorGUI.EndChangeCheck()) {
 					if(storyJSONTextAsset == null) {
 						story = null;
-						errors = null;
 					} else {
 						Stop();
 						Play(storyJSONTextAsset);
 					}
 				}
-				if(storyJSONTextAsset != null && storyJSON != null) {
-					string fullJSONFilePath = InkEditorUtils.UnityRelativeToAbsolutePath(AssetDatabase.GetAssetPath(storyJSONTextAsset));
-					var updatedStoryJSONLastEditDateTime = File.GetLastWriteTime(fullJSONFilePath);
-					if (currentStoryJSONLastEditDateTime != updatedStoryJSONLastEditDateTime ) {
-						EditorGUILayout.HelpBox ("Story JSON file has changed. Restart to play updated story.", MessageType.Warning);
-					}
+				if(storyJSONTextAsset != null && storyJSON != null && storyJSONTextAsset.text != storyJSON) {
+					EditorGUILayout.HelpBox("Story JSON file has changed. Restart to play updated story.", MessageType.Warning);
 				}
 				EditorGUILayout.EndVertical();
 			}
@@ -342,15 +323,15 @@ namespace Ink.UnityIntegration {
 
 			if(story == null) {
 				EditorGUI.BeginDisabledGroup(storyJSONTextAsset == null);
-				if(GUILayout.Button(new GUIContent("Start", "Run the story"), EditorStyles.toolbarButton)) {
+				if(GUILayout.Button("Start", EditorStyles.toolbarButton)) {
 					Play(storyJSONTextAsset);
 				}
 				EditorGUI.EndDisabledGroup();
 			} else {
-				if(GUILayout.Button(new GUIContent("Stop", "Stop the story"), EditorStyles.toolbarButton)) {
+				if(GUILayout.Button("Stop", EditorStyles.toolbarButton)) {
 					Stop();
 				}
-				if(GUILayout.Button(new GUIContent("Restart", "Restarts the story"), EditorStyles.toolbarButton)) {
+				if(GUILayout.Button("Restart", EditorStyles.toolbarButton)) {
 					Restart();
 				}
 			}
@@ -359,12 +340,12 @@ namespace Ink.UnityIntegration {
 
 			if(story != null) {
 				EditorGUI.BeginDisabledGroup(!storyStateHistory.canUndo);
-				if(GUILayout.Button(new GUIContent("Undo", "Undo the last continue or choice"), EditorStyles.toolbarButton)) {
+				if(GUILayout.Button("Undo", EditorStyles.toolbarButton)) {
 					Undo();
 				}
 				EditorGUI.EndDisabledGroup();
 				EditorGUI.BeginDisabledGroup(!storyStateHistory.canRedo);
-				if(GUILayout.Button(new GUIContent("Redo", "Redo the last continue or choice"), EditorStyles.toolbarButton)) {
+				if(GUILayout.Button("Redo", EditorStyles.toolbarButton)) {
 					Redo();
 				}
 				EditorGUI.EndDisabledGroup();
@@ -373,12 +354,12 @@ namespace Ink.UnityIntegration {
 			GUILayout.FlexibleSpace();
 
 			EditorGUI.BeginChangeCheck();
-			playerOptions.continueAutomatically = GUILayout.Toggle(playerOptions.continueAutomatically, new GUIContent("Auto-Continue", "Continues content automatically"), EditorStyles.toolbarButton);
+			playerOptions.continueAutomatically = GUILayout.Toggle(playerOptions.continueAutomatically, "Auto-Continue", EditorStyles.toolbarButton);
 			if(EditorGUI.EndChangeCheck() && playerOptions.continueAutomatically) {
 				PingAutomator();
 			}
 
-			playerOptions.chooseAutomatically = GUILayout.Toggle(playerOptions.chooseAutomatically, new GUIContent("Auto-Choice", "Makes choices automatically"), EditorStyles.toolbarButton);
+			playerOptions.chooseAutomatically = GUILayout.Toggle(playerOptions.chooseAutomatically, "Auto-Choice", EditorStyles.toolbarButton);
 
 			GUILayout.EndHorizontal();
 		}
@@ -387,18 +368,18 @@ namespace Ink.UnityIntegration {
 			EditorGUILayout.BeginHorizontal(EditorStyles.toolbar);
 			showingContentPanel = EditorGUILayout.Foldout(showingContentPanel, "Content");
 			EditorGUI.BeginChangeCheck();
-			displayOptions.displayTime = GUILayout.Toggle(displayOptions.displayTime, new GUIContent("Time", "Displays the datetime when the content was shown"), EditorStyles.toolbarButton);
+			displayOptions.displayTime = GUILayout.Toggle(displayOptions.displayTime, "Time", EditorStyles.toolbarButton);
 			if(EditorGUI.EndChangeCheck()) {
 				ScrollToBottom();
 			}
 
 			EditorGUI.BeginChangeCheck();
-			displayOptions.displayChoicesInLog = GUILayout.Toggle(displayOptions.displayChoicesInLog, new GUIContent("Choices", "Displays choices"), EditorStyles.toolbarButton);
+			displayOptions.displayChoicesInLog = GUILayout.Toggle(displayOptions.displayChoicesInLog, "Choices", EditorStyles.toolbarButton);
 			if(EditorGUI.EndChangeCheck()) {
 				ScrollToBottom();
 			}
 			EditorGUI.BeginChangeCheck();
-			displayOptions.displayDebugNotesInLog = GUILayout.Toggle(displayOptions.displayDebugNotesInLog, new GUIContent("Debug", "Displays load/save/set variable events"), EditorStyles.toolbarButton);
+			displayOptions.displayDebugNotesInLog = GUILayout.Toggle(displayOptions.displayDebugNotesInLog, "Debug", EditorStyles.toolbarButton);
 			if(EditorGUI.EndChangeCheck()) {
 				ScrollToBottom();
 			}
@@ -455,10 +436,10 @@ namespace Ink.UnityIntegration {
 		void DisplayChoices () {
 			GUILayout.BeginVertical();
 			if(story.canContinue) {
-				if(GUILayout.Button(new GUIContent("Continue", "Continues once"))) {
+				if(GUILayout.Button("Continue")) {
 					ContinueStory();
 				}
-				if(GUILayout.Button(new GUIContent("Continue Maximally", "Continues until the next choice"))) {
+				if(GUILayout.Button("Continue Maximally")) {
 					while(story.canContinue) {
 						ContinueStory();
 					}
@@ -570,7 +551,7 @@ namespace Ink.UnityIntegration {
 
 			bool functionIsValid = functionPanelState.functionName != String.Empty && story.HasFunction(functionPanelState.functionName);
 			EditorGUI.BeginDisabledGroup(!functionIsValid);
-			if (GUILayout.Button(new GUIContent("Execute", "Runs the function"))) {
+			if (GUILayout.Button("Execute")) {
 				storyHistory.Add(new InkPlayerHistoryContentItem("Execute function '"+functionPanelState.functionName+"'", InkPlayerHistoryContentItem.ContentType.DebugNote));
 				string outputContent = null;
 				functionPanelState.functionReturnValue = story.EvaluateFunction(functionPanelState.functionName, out outputContent);

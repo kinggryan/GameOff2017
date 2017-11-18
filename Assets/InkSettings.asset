@@ -14,7 +14,6 @@ MonoBehaviour:
   templateFile: {fileID: 0}
   compileAutomatically: 1
   handleJSONFilesAutomatically: 1
-  compileTimeout: 6
   customInklecateOptions:
     runInklecateWithMono: 0
     additionalCompilerOptions: 
