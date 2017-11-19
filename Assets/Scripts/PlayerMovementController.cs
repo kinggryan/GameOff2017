@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovementController : MonoBehaviour {
 
-	public float maxSpeed = 1f;
+	private float maxSpeed = 0.5f;
 	Vector2 movementVector = Vector2.zero;
 	float movementLerpSpeed = 20f;
 
