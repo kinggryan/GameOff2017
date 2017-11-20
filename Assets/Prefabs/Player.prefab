@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4883591504755486}
   - component: {fileID: 212820940714579946}
   - component: {fileID: 50240815269380952}
-  - component: {fileID: 114497252628927180}
   - component: {fileID: 61787224353857324}
+  - component: {fileID: 114942026407973320}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -88,7 +88,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0625, y: 0.5683942}
   m_EdgeRadius: 0
---- !u!114 &114497252628927180
+--- !u!114 &114942026407973320
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -96,10 +96,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1738335449576564}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e241ce4ef8a77142801d81674693b1f, type: 3}
+  m_Script: {fileID: 11500000, guid: 63788946fdb544e839e1ff26c9b7e8d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.5
 --- !u!212 &212820940714579946
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -131,7 +130,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1186374585
+  m_SortingLayerID: 756779003
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300014, guid: b87902c17fea44344bf8cce674747347, type: 3}
