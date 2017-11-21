@@ -210,12 +210,12 @@ Prefab:
     - target: {fileID: 224781523079899770, guid: 80b6c3822885a42a5a7c6035f2b0a9c1,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 553
+      value: 171
       objectReference: {fileID: 0}
     - target: {fileID: 224781523079899770, guid: 80b6c3822885a42a5a7c6035f2b0a9c1,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 368.5
+      value: 114
       objectReference: {fileID: 0}
     - target: {fileID: 224781523079899770, guid: 80b6c3822885a42a5a7c6035f2b0a9c1,
         type: 2}
@@ -568,6 +568,11 @@ Prefab:
       propertyPath: conversationUIParent
       value: 
       objectReference: {fileID: 819489967}
+    - target: {fileID: 114121188068061202, guid: 27bab62c0df7f4422accf37e9f860ab0,
+        type: 2}
+      propertyPath: inkAsset
+      value: 
+      objectReference: {fileID: 4900000, guid: f1634b2049f42483ba7d038afb230ed5, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 27bab62c0df7f4422accf37e9f860ab0, type: 2}
   m_IsPrefabParent: 0

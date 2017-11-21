@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 983af1b6602bf416b9928d40b37a38bd, type: 3}
   m_Name: InkSettings
   m_EditorClassIdentifier: 
-  templateFile: {fileID: 0}
+  templateFile: {fileID: 4900000, guid: f1634b2049f42483ba7d038afb230ed5, type: 3}
   compileAutomatically: 1
   handleJSONFilesAutomatically: 1
   customInklecateOptions:
