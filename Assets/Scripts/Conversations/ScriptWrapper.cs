@@ -30,7 +30,9 @@ public class ScriptWrapper : MonoBehaviour {
 	/// <returns>The next line.</returns>
 	public string GetNextLine()
 	{
-		return _inkStory.Continue ();
+		var nextLine = _inkStory.Continue ();
+		Debug.Log ("Next line: " + nextLine);
+		return nextLine;
 	}
 
 	public List<Choice> GetChoices() {

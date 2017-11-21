@@ -7,19 +7,20 @@ using Ink.Runtime;
 public class ConversationManager : MonoBehaviour {
 
 	public GameObject conversationUIParent;
-	private ConversationUIManager uiManager;
+	public ConversationUIManager uiManager;
 	private ScriptWrapper story;
 	private bool inConversation = false;
 
-	float delayTime = 0.5f;
+	float delayDuration = 0.5f;
+	float delayTimer = 0.5f;
 
-	void Awake() {
+	void Start() {
 		story = GetComponent<ScriptWrapper> ();
-		uiManager = UnityEngine.Object.FindObjectOfType<ConversationUIManager> ();
+//		uiManager = UnityEngine.Object.FindObjectOfType<ConversationUIManager> ();
 	}
 
 	void Update() {
-		delayTime -= Time.deltaTime;
+		delayTimer -= Time.deltaTime;
 	}
 
 	public void StartConversation() {
@@ -35,23 +36,26 @@ public class ConversationManager : MonoBehaviour {
 	}
 
 	public void ProgressConversation() {
-		if (delayTime >= 0)
+		if (delayTimer >= 0)
 			return;
 
 		// If there's a line of dialogue, display it
 		if (story.CanGetNextLine ()) {
+			Debug.Log ("Getting next line");
 			DisplayDialogue (story.GetNextLine ());
 		} else if (story.CanGetChoices ()) {
+			Debug.Log ("Getting choices");
 			DisplayChoices (story.GetChoices ());
 		} else {
+			Debug.Log ("Ending dialogue");
 			EndDialogue ();
 		}
 
-		delayTime += delayTime;
+		delayTimer += delayDuration;
 	}
 
 	public void ChoiceSelected(int choiceIndex) {
-		if (delayTime >= 0)
+		if (delayTimer >= 0)
 			return;
 		
 		story.ChooseChoiceIndex(choiceIndex);

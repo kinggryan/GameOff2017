@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour {
 
-	float talkingDistance = 0.33f;
+	float talkingDistance = 2f;
 	PlayerMovementController player;
 	ConversationManager conversationManager;
 
