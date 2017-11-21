@@ -4695,8 +4695,9 @@ GameObject:
   m_Component:
   - component: {fileID: 884702297}
   - component: {fileID: 884702296}
+  - component: {fileID: 884702298}
   m_Layer: 0
-  m_Name: Bachelor_01_7
+  m_Name: Bachelor_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4759,6 +4760,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &884702298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 884702295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d952e0f3c73da4ebfa4e4173365b39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite:
+  - {fileID: 21300020, guid: 89940f48e9e2d364f97f4da82137243c, type: 3}
+  - {fileID: 21300002, guid: 89940f48e9e2d364f97f4da82137243c, type: 3}
+  - {fileID: 21300008, guid: 89940f48e9e2d364f97f4da82137243c, type: 3}
+  - {fileID: 21300014, guid: 89940f48e9e2d364f97f4da82137243c, type: 3}
+  rndRange: 2
+  minTime: 2
 --- !u!1 &1016444826
 GameObject:
   m_ObjectHideFlags: 0
