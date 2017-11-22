@@ -41,8 +41,12 @@ public class ConversationManager : MonoBehaviour {
 
 		// If there's a line of dialogue, display it
 		if (story.CanGetNextLine ()) {
-			Debug.Log ("Getting next line");
-			DisplayDialogue (story.GetNextLine ());
+//			Debug.Log ("Getting next line");
+
+			// Show the next line if we only showed a nameplate just now
+			if (DisplayDialogue (story.GetNextLine ()) && story.CanGetChoices()) {
+				DisplayChoices (story.GetChoices ());
+			}
 		} else if (story.CanGetChoices ()) {
 			Debug.Log ("Getting choices");
 			DisplayChoices (story.GetChoices ());
@@ -62,9 +66,9 @@ public class ConversationManager : MonoBehaviour {
 		ProgressConversation();
 	}
 
-	void DisplayDialogue(string dialogue) {
-		Debug.Log (Time.time + " Displaying dialogue " + dialogue);
-		uiManager.DisplayDialogue (dialogue);
+	bool DisplayDialogue(string dialogue) {
+//		Debug.Log (Time.time + " Displaying dialogue " + dialogue);
+		return uiManager.DisplayDialogue (dialogue);
 	}
 
 	void DisplayChoices(List<Choice> choices) {
