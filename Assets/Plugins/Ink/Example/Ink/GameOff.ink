@@ -7,11 +7,14 @@ VAR romance = 0
 VAR queer = -1
 VAR titled = false
 VAR name = true
+VAR rando_Camilla = false
+
 LIST titles = (Miss), Lady, Dowager //deterimes what is is on the UI when you talk
 LIST Essex_title = (Lord), Earl, Dummy1 
 LIST Ascot_title = (Lord), Viscount, Dummy2 
 LIST Bath_title = (Lord), Marquess, Dummy3
 LIST Camilla_title = (Lady), Marchioness, Dummy4
+
 
 LIST Bachloer_names = Place, Holder, Essex, Ascot, Bath, Camilla //fix
 
@@ -41,6 +44,27 @@ LIST Bachloer_names = Place, Holder, Essex, Ascot, Bath, Camilla //fix
     ~return  x + list
 }
 
+== function order(a,b,c,d) ==
+VAR bigger = 0
+VAR bigger2 = 0
+{a < b:
+    ~bigger = b
+-else:
+    ~bigger = a
+}
+
+{c < d:
+    ~bigger2 = d
+-else:
+     ~bigger2 = c
+}
+
+{bigger < bigger2:
+    ~return bigger2
+-else: 
+     ~return bigger
+}
+
 == invitation ==
 {titles} {full_name()}: Standing before an impressive manor, you quickly check the invitaion you received a fortnight prior, disbelieving your good fortnue. //player starts in front of the door 
 "The Marquess and Marchioness of Derby request the pleasure of Miss Ruth Leigh's company at dinner on Thursday, the 14th of April, at 5 o’clock."//Will be displayed on a fancy calling card
@@ -57,13 +81,13 @@ LIST Bachloer_names = Place, Holder, Essex, Ascot, Bath, Camilla //fix
 *You thought nothing of the note <>
 ->nothing
 
-- (hostile) but the chance to mingle with the likes of high society were too promising to miss. ->exitce
+- (hostile) but the chance to mingle with the likes of high society were too promising to miss. ->exitce 
 
-- (nothing) and were overjoyed that some guardian had placed you in good hands. {increase_stat(temperment)}
+- (nothing) and were overjoyed that some guardian had placed you in good hands. {increase_stat(temperment)} 
 
-- (exitce) With anxious exitcement, you stare expecetedly at Rose House, wondering what the evening holds for you.  
+- (exitce) With anxious exitcement, you stare expecetedly at Rose House, wondering what the evening holds for you.   
 
--> arrived_At_Rose_House
+-> arrived_At_Rose_House 
 
 === arrived_At_Rose_House ===
 
@@ -72,7 +96,7 @@ LIST Bachloer_names = Place, Holder, Essex, Ascot, Bath, Camilla //fix
 {time_waited < 4} {You arrive at the townhouse | After occupying ourself for a short while, you arrived |Surely, you figure, it is time to enter | If fifteen minutes is fashionably late, then I must be excelling in style at}{five minutes before the hour.|at Rose House again at exactly five o'clock. | fifteen minutes past the hour. | thirty minutes past the hour. | fourty-five past the hour}
 
     *You enter Rose House
-    <> with much trepadiation.
+    <> with much trepadiation. #loadScene parlor1
     
   //  Temperment is now {temperment} //Test for stat_increase(). Will remove in game
     ->introductions
@@ -128,7 +152,7 @@ Marchioness of Derby: Amy introduces everyone.
 ->chit_Chat
 
 === chit_Chat ===
-
+#gameEvent talkInParlor
 -(talk_options)
 
 {titles} {full_name()}:
@@ -148,7 +172,7 @@ You walk over to Lord Bath
 You walk over to Lady Camilla
 ->chat_Camilla
 
-* ->march_Order
+* ->march_Order 
 
 =chat_Essex
 {titles} {full_name()}:
@@ -266,7 +290,6 @@ How do you address Lady Camilla?
 {increase_stat(queer)}
 {NPC_full_name(Camilla, Camilla_title)}: She is warmed by your familarity
 
-
 -->talk_Camiila
 
 -(talk_Camiila)
@@ -275,8 +298,93 @@ How do you address Lady Camilla?
 
 == march_Order ==
   Marchioness of Derby walks over and starts to ask you questions.
-  ->DONE      
+  //if time add followup questions if appropriate 
+  Question1
+  
+  *Answer 1A
+  {increase_stat(romance)}
+  *Answer 1B
+  {increase_stat(wit)}
+  *Answer 1C
+  {increase_stat(temperment)}
+  -Question2
+  
+  *Answer 2A
+  {increase_stat(romance)}
+  *Answer 2B
+  {increase_stat(wit)}
+  *Answer 2C
+  {increase_stat(queer)}
+  
+  -Question 3
+  
+  *Answer 3A
+  {increase_stat(romance)}
+  *Answer 3B
+  {increase_stat(wit)}
+  *Answer 3C
+  {increase_stat(temperment)} 
+  --> pick_order 
 
+=pick_order
+ Camila: {queer}
+ Essex: {temperment}
+ Ascot: {wit}
+ Bath: {romance}
+ 
+ {
+ -order(temperment, wit, romance, queer) == queer:
+     ~rando_Camilla = true
+     ->order_rando
+-order(temperment, wit, romance, queer) == temperment:
+     ->order_Essex
+-order(temperment, wit, romance, queer) == wit:
+     ->order_Ascot
+-order(temperment, wit, romance, queer) == romance:
+->order_Bath
+-else:
+     ->order_rando
+}
+
+=order_rando
+Picked Rando
+~Bachloer_names = Place
+-> march
+
+=order_Essex
+Picked Essex
+~Bachloer_names = Essex
+ -> march
+=order_Ascot
+Picked Ascot
+~Bachloer_names = Ascot
+ -> march
+=order_Bath
+Picked Bath
+~Bachloer_names = Bath
+ -> march    
+
+=== march ===
+#loadScene parlor2 
+//maybe add marching convo
+{
+- Bachloer_names == Place:
+    Walk with Rando
+    ->dinner
+- Bachloer_names == Essex:
+    Walk with Essex
+    ->dinner
+- Bachloer_names == Ascot:
+    Walk with Ascot
+    ->dinner
+- Bachloer_names == Bath:
+    Walk with Bath
+    ->dinner
+}
+=== dinner ===
+#loadScene dining
+You are seated at a table with {Bachloer_names} to your left. 
+->DONE
     
   
 
