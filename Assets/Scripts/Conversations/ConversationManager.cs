@@ -41,7 +41,7 @@ public class ConversationManager : MonoBehaviour {
 
 		// If there's a line of dialogue, display it
 		if (story.CanGetNextLine ()) {
-			Debug.Log ("Getting next line");
+//			Debug.Log ("Getting next line");
 
 			// Show the next line if we only showed a nameplate just now
 			if (DisplayDialogue (story.GetNextLine ()) && story.CanGetChoices()) {
