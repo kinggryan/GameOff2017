@@ -5,10 +5,15 @@ using Ink.Runtime;
 
 public class ConversationUIManager : MonoBehaviour {
 
+	public UnityEngine.UI.Image blackScreen;
 	public UnityEngine.UI.Text nameBox;
 	public UnityEngine.UI.Text dialogueBox;
 	public GameObject choicesParent;
 	public UnityEngine.UI.Text[] choiceBoxes;
+
+	private bool showBlackScreen = false;
+	private float blackScreenFadeRate = 3f;
+	private float fadedMessageThreshold = 0.005f;
 
 	private struct Dialogue {
 		public string name;
@@ -18,11 +23,14 @@ public class ConversationUIManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 //		gameObject.SetActive (false);
+		var blackScreenColor = blackScreen.color;
+		blackScreenColor.a = 1f;
+		blackScreen.color = blackScreenColor;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		AdjustScreenFade ();
 	}
 
 
@@ -57,23 +65,16 @@ public class ConversationUIManager : MonoBehaviour {
 			choiceBox.enabled = false;
 		}
 
-//		var heightBetweenChoices = (choicesParent.GetComponent<RectTransform> ().rect.height - choiceBoxes[0].rectTransform.rect.height)/(choiceBoxes.Length-1);
-//		var currentOffset =  (choices.Count - 1) * heightBetweenChoices / 2;
 		for (var i = 0; i < choices.Count; i++) {
 			var choice = choices [i];
 			choiceBoxes [i].enabled = true;
 			choiceBoxes [i].text = choice.text;
-//			var transformPos = choiceBoxes [i].rectTransform.position;
-//			transformPos.y = currentOffset;
-//			choiceBoxes [i].rectTransform.position = transformPos;
-//			currentOffset += heightBetweenChoices;
 		}
 	}
 
 	private Dialogue GetDialogueFromString(string dialogue) {
 		var seperators = new char[]{ ':' };
 		var twoStrings = dialogue.Split (seperators, dialogue.Length);
-//		Debug.Log ("Strings: " + twoStrings.Length);
 		var retDialogue = new Dialogue ();
 		if (twoStrings.Length == 1) {
 			retDialogue.text = dialogue;
@@ -83,5 +84,36 @@ public class ConversationUIManager : MonoBehaviour {
 			retDialogue.name = twoStrings [0];
 		}
 		return retDialogue;
+	}
+
+	void AdjustScreenFade() {
+		if (showBlackScreen) {
+			var blackScreenColor = blackScreen.color;
+			var oldAlpha = blackScreenColor.a;
+			blackScreenColor.a = Mathf.Lerp (blackScreenColor.a, 1f, blackScreenFadeRate * Time.deltaTime);
+			blackScreen.color = blackScreenColor;
+
+			Debug.Log ("Fade Out - New color " + blackScreenColor);
+
+			// If we faded in enough, broadcast the message
+			if (oldAlpha < 1 - fadedMessageThreshold && blackScreenColor.a >= 1 - fadedMessageThreshold) {
+				BroadcastMessage ("OnScreenFadeOutComplete", SendMessageOptions.DontRequireReceiver);
+			}
+		} else {
+			var blackScreenColor = blackScreen.color;
+			var oldAlpha = blackScreenColor.a;
+			blackScreenColor.a = Mathf.Lerp (blackScreenColor.a, 0f, blackScreenFadeRate * Time.deltaTime);
+			blackScreen.color = blackScreenColor;
+			Debug.Log ("New color " + blackScreenColor);
+
+			// If we faded in enough, broadcast the message
+			if (oldAlpha > fadedMessageThreshold && blackScreenColor.a <= fadedMessageThreshold) {
+				BroadcastMessage ("OnScreenFadeInComplete", SendMessageOptions.DontRequireReceiver);
+			}
+		}
+	}
+
+	public void FadeOut() {
+		showBlackScreen = true;
 	}
 }
