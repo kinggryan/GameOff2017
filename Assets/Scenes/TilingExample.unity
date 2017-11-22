@@ -4776,7 +4776,7 @@ MonoBehaviour:
   - {fileID: 21300002, guid: 89940f48e9e2d364f97f4da82137243c, type: 3}
   - {fileID: 21300008, guid: 89940f48e9e2d364f97f4da82137243c, type: 3}
   - {fileID: 21300014, guid: 89940f48e9e2d364f97f4da82137243c, type: 3}
-  rndRange: 2
+  rndRange: 3
   minTime: 2
 --- !u!1 &1016444826
 GameObject:
@@ -5480,6 +5480,7 @@ GameObject:
   - component: {fileID: 1057033637}
   - component: {fileID: 1057033636}
   - component: {fileID: 1057033640}
+  - component: {fileID: 1057033641}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5571,6 +5572,18 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &1057033641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1057033635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
 --- !u!1 &1099268035
 GameObject:
   m_ObjectHideFlags: 0

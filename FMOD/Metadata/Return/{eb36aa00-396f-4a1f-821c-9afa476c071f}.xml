@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.01.08.00">
+<objects serializationModel="Studio.01.10.00">
     <object class="MixerReturn" id="{eb36aa00-396f-4a1f-821c-9afa476c071f}">
         <property name="overridingInputFormat">
             <value>2</value>
