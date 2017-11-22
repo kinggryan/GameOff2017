@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 18ef62ec8be704048b817cb2fe5a5767
+timeCreated: 1511282748
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Quinzey
+  fontNames:
+  - Quinzey
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
