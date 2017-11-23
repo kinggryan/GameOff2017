@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class spriteRotator : MonoBehaviour {
+public class SpriteRotator : MonoBehaviour {
 
 public Sprite[] sprite;
 private float timer;

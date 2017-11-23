@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 2171c14a40b489d4b91dc774cf300c61
-timeCreated: 1511133666
+timeCreated: 1511404902
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -16,6 +16,7 @@ TextureImporter:
     21300018: Hostess_9
     21300020: Hostess_10
     21300022: Hostess_11
+    21300024: Hostess_12
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -102,10 +103,10 @@ TextureImporter:
       name: Hostess_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 192
-        width: 34
-        height: 58
+        x: 20
+        y: 204
+        width: 12
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -116,10 +117,10 @@ TextureImporter:
       name: Hostess_1
       rect:
         serializedVersion: 2
-        x: 46
-        y: 192
-        width: 40
-        height: 60
+        x: 45
+        y: 193
+        width: 44
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,10 +131,10 @@ TextureImporter:
       name: Hostess_2
       rect:
         serializedVersion: 2
-        x: 96
-        y: 192
-        width: 34
-        height: 58
+        x: 92
+        y: 127
+        width: 40
+        height: 87
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,10 +145,10 @@ TextureImporter:
       name: Hostess_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
-        width: 32
-        height: 58
+        x: 5
+        y: 127
+        width: 39
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,10 +159,10 @@ TextureImporter:
       name: Hostess_4
       rect:
         serializedVersion: 2
-        x: 48
-        y: 128
-        width: 34
-        height: 60
+        x: 46
+        y: 127
+        width: 40
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +173,10 @@ TextureImporter:
       name: Hostess_5
       rect:
         serializedVersion: 2
-        x: 96
-        y: 128
-        width: 36
-        height: 58
+        x: 88
+        y: 176
+        width: 4
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,10 +187,10 @@ TextureImporter:
       name: Hostess_6
       rect:
         serializedVersion: 2
-        x: 2
-        y: 64
-        width: 34
-        height: 58
+        x: 47
+        y: 67
+        width: 44
+        height: 59
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,10 +201,10 @@ TextureImporter:
       name: Hostess_7
       rect:
         serializedVersion: 2
-        x: 46
-        y: 64
-        width: 40
-        height: 60
+        x: 106
+        y: 80
+        width: 6
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,10 +215,10 @@ TextureImporter:
       name: Hostess_8
       rect:
         serializedVersion: 2
-        x: 96
-        y: 64
-        width: 34
-        height: 58
+        x: 100
+        y: 76
+        width: 4
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,10 +229,10 @@ TextureImporter:
       name: Hostess_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 36
-        height: 58
+        x: 2
+        y: 2
+        width: 42
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,10 +243,10 @@ TextureImporter:
       name: Hostess_10
       rect:
         serializedVersion: 2
-        x: 50
-        y: 0
-        width: 34
-        height: 60
+        x: 45
+        y: 2
+        width: 39
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,10 +257,24 @@ TextureImporter:
       name: Hostess_11
       rect:
         serializedVersion: 2
-        x: 100
-        y: 0
-        width: 32
-        height: 58
+        x: 84
+        y: 52
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Hostess_12
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 2
+        width: 39
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

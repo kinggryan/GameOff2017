@@ -1,33 +1,15 @@
 fileFormatVersion: 2
-guid: b87902c17fea44344bf8cce674747347
-timeCreated: 1511403131
+guid: da82bed2c40be02438a8c06da75c4af9
+timeCreated: 1511407273
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Lady_02_0
-    21300002: Lady_02_1
-    21300004: Lady_02_2
-    21300006: Lady_02_3
-    21300008: Lady_02_4
-    21300010: Lady_02_5
-    21300012: Lady_02_6
-    21300014: Lady_02_7
-    21300016: Lady_02_8
-    21300018: Lady_02_9
-    21300020: Lady_02_10
-    21300022: Lady_02_11
-    21300024: Player_0
-    21300026: Player_1
-    21300028: Player_2
-    21300030: Player_3
-    21300032: Player_4
-    21300034: Player_5
-    21300036: Player_6
-    21300038: Player_7
-    21300040: Player_8
-    21300042: Player_9
-    21300044: Player_10
-    21300046: Player_11
+    21300000: NPCM1_0
+    21300002: NPCM1_1
+    21300004: NPCM1_2
+    21300006: NPCM1_3
+    21300008: NPCM1_4
+    21300010: NPCM1_5
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -55,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -1
     wrapU: 1
@@ -111,13 +93,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_0
+      name: NPCM1_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 190
-        width: 44
-        height: 61
+        x: 45
+        y: 192
+        width: 34
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,13 +107,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Player_1
+      name: NPCM1_1
       rect:
         serializedVersion: 2
-        x: 47
-        y: 191
-        width: 44
-        height: 63
+        x: 4
+        y: 130
+        width: 19
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,13 +121,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Player_2
+      name: NPCM1_2
       rect:
         serializedVersion: 2
-        x: 96
-        y: 190
-        width: 44
-        height: 61
+        x: 46
+        y: 64
+        width: 32
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,97 +135,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Player_3
+      name: NPCM1_3
       rect:
         serializedVersion: 2
-        x: 7
-        y: 125
-        width: 39
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Player_4
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 125
-        width: 39
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Player_5
-      rect:
-        serializedVersion: 2
-        x: 94
-        y: 125
-        width: 39
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Player_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 65
-        width: 44
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Player_7
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 65
-        width: 44
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Player_8
-      rect:
-        serializedVersion: 2
-        x: 103
-        y: 65
-        width: 44
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Player_9
-      rect:
-        serializedVersion: 2
-        x: 2
+        x: 53
         y: 0
-        width: 39
-        height: 63
+        width: 16
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -251,13 +149,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Player_10
+      name: NPCM1_4
       rect:
         serializedVersion: 2
-        x: 47
-        y: 0
-        width: 39
-        height: 63
+        x: 55
+        y: 128
+        width: 16
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,13 +163,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Player_11
+      name: NPCM1_5
       rect:
         serializedVersion: 2
-        x: 89
-        y: 0
-        width: 39
-        height: 63
+        x: 101
+        y: 128
+        width: 20
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

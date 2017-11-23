@@ -1,33 +1,19 @@
 fileFormatVersion: 2
-guid: b87902c17fea44344bf8cce674747347
-timeCreated: 1511403131
+guid: b54cc938a4f34b34097aebf767856cdc
+timeCreated: 1511405088
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Lady_02_0
-    21300002: Lady_02_1
-    21300004: Lady_02_2
-    21300006: Lady_02_3
-    21300008: Lady_02_4
-    21300010: Lady_02_5
-    21300012: Lady_02_6
-    21300014: Lady_02_7
-    21300016: Lady_02_8
-    21300018: Lady_02_9
-    21300020: Lady_02_10
-    21300022: Lady_02_11
-    21300024: Player_0
-    21300026: Player_1
-    21300028: Player_2
-    21300030: Player_3
-    21300032: Player_4
-    21300034: Player_5
-    21300036: Player_6
-    21300038: Player_7
-    21300040: Player_8
-    21300042: Player_9
-    21300044: Player_10
-    21300046: Player_11
+    21300000: NPCF1_0
+    21300002: NPCF1_1
+    21300004: NPCF1_2
+    21300006: NPCF1_3
+    21300008: NPCF1_4
+    21300010: NPCF1_5
+    21300012: NPCF1_6
+    21300014: NPCF1_7
+    21300016: NPCF1_8
+    21300018: NPCF1_9
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -111,169 +97,141 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_0
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 190
-        width: 44
-        height: 61
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Player_1
-      rect:
-        serializedVersion: 2
-        x: 47
-        y: 191
-        width: 44
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Player_2
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 190
-        width: 44
-        height: 61
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Player_3
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 125
-        width: 39
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Player_4
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 125
-        width: 39
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Player_5
-      rect:
-        serializedVersion: 2
-        x: 94
-        y: 125
-        width: 39
-        height: 63
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Player_6
+      name: NPCF1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 65
-        width: 44
-        height: 59
+        y: 248
+        width: 60
+        height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Player_7
+      name: NPCF1_1
       rect:
         serializedVersion: 2
-        x: 49
-        y: 65
+        x: 45
+        y: 193
         width: 44
-        height: 59
+        height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Player_8
+      name: NPCF1_2
       rect:
         serializedVersion: 2
-        x: 103
-        y: 65
-        width: 44
-        height: 59
+        x: 20
+        y: 206
+        width: 32
+        height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Player_9
+      name: NPCF1_3
       rect:
         serializedVersion: 2
-        x: 2
-        y: 0
+        x: 5
+        y: 127
         width: 39
         height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Player_10
+      name: NPCF1_4
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 127
+        width: 41
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPCF1_5
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 127
+        width: 40
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPCF1_6
       rect:
         serializedVersion: 2
         x: 47
-        y: 0
-        width: 39
-        height: 63
+        y: 67
+        width: 44
+        height: 59
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Player_11
+      name: NPCF1_7
       rect:
         serializedVersion: 2
-        x: 89
-        y: 0
+        x: 2
+        y: 2
+        width: 37
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPCF1_8
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 2
         width: 39
         height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: NPCF1_9
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 2
+        width: 39
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

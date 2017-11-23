@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7882614e4a095f7479fde9efcc335f56
-timeCreated: 1511146927
+timeCreated: 1511405155
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -102,10 +102,10 @@ TextureImporter:
       name: Rival_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 192
-        width: 34
-        height: 58
+        x: 5
+        y: 127
+        width: 39
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -116,9 +116,9 @@ TextureImporter:
       name: Rival_1
       rect:
         serializedVersion: 2
-        x: 46
-        y: 192
-        width: 40
+        x: 45
+        y: 193
+        width: 44
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -130,10 +130,10 @@ TextureImporter:
       name: Rival_2
       rect:
         serializedVersion: 2
-        x: 96
-        y: 192
-        width: 34
-        height: 58
+        x: 92
+        y: 127
+        width: 40
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,10 +144,10 @@ TextureImporter:
       name: Rival_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
-        width: 32
-        height: 58
+        x: 47
+        y: 127
+        width: 39
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,10 +158,10 @@ TextureImporter:
       name: Rival_4
       rect:
         serializedVersion: 2
-        x: 48
-        y: 128
-        width: 34
-        height: 60
+        x: 47
+        y: 67
+        width: 44
+        height: 59
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +172,10 @@ TextureImporter:
       name: Rival_5
       rect:
         serializedVersion: 2
-        x: 96
-        y: 128
-        width: 36
-        height: 58
+        x: 2
+        y: 2
+        width: 37
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,10 +186,10 @@ TextureImporter:
       name: Rival_6
       rect:
         serializedVersion: 2
-        x: 2
-        y: 64
-        width: 34
-        height: 58
+        x: 45
+        y: 2
+        width: 39
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,66 +200,10 @@ TextureImporter:
       name: Rival_7
       rect:
         serializedVersion: 2
-        x: 47
-        y: 65
-        width: 38
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Rival_8
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 34
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Rival_9
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 36
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Rival_10
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 0
-        width: 34
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Rival_11
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 0
-        width: 32
-        height: 58
+        x: 87
+        y: 2
+        width: 39
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
