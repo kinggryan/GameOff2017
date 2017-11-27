@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 114244048075380170}
-  - {fileID: 114227188229232724}
+  - {fileID: 114641259025489884}
+  - {fileID: 114726385147399132}
   EditorEvents:
-  - {fileID: 114961104451599958}
-  MasterBankRef: {fileID: 114227188229232724}
-  StringsBankRef: {fileID: 114244048075380170}
-  stringsBankWriteTime: 636468210638769804
+  - {fileID: 114633564586742082}
+  MasterBankRef: {fileID: 114726385147399132}
+  StringsBankRef: {fileID: 114641259025489884}
+  stringsBankWriteTime: 636469987091628417
   cacheVersion: 2
---- !u!114 &114040182808811574
+--- !u!114 &114161190209022348
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -28,17 +28,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: E:\Projects\2017\Games\GameOff2017\FMOD\Build\Desktop\Master Bank.bank
-  lastModified: 636468204560385015
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 842496
-  Exists: 1
---- !u!114 &114122653092379070
+  Name: Transition
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114369613231187496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Transition
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114385366111596150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Transition
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114633564586742082
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -49,18 +76,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: event:/Test
-  guid: 6bec393f160a984fbe20f591a221b937
+  Path: event:/ParlorMusic
+  guid: ebe5735e5b47f7478575e007b46e1ed4
   Banks:
-  - {fileID: 114040182808811574}
+  - {fileID: 114726385147399132}
   IsStream: 1
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 72167
---- !u!114 &114227188229232724
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114910355555914782}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 150769
+--- !u!114 &114641259025489884
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -71,15 +99,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: E:\Projects\2017\Games\GameOff2017\VictorianDatingSim_FMOD\Build\Desktop\Master
+  Path: FMOD\VictorianDatingSim\Build\Desktop\Master Bank.strings.bank
+  lastModified: 636469987091628417
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 722
+  Exists: 1
+--- !u!114 &114726385147399132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: E:\Projects\2017\Games\GameOff2017\FMOD\VictorianDatingSim\Build\Desktop\Master
     Bank.bank
-  lastModified: 636468210638724685
+  lastModified: 636469987091563247
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 475968
+    Value: 1619136
   Exists: 1
---- !u!114 &114244048075380170
+--- !u!114 &114910355555914782
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -87,17 +133,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: VictorianDatingSim_FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636468210638769804
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 672
-  Exists: 1
---- !u!114 &114961104451599958
+  Name: Transition
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114937494851210788
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -105,17 +148,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: event:/Parlour
-  guid: 72f3f1258c74774084d126ed5115b050
-  Banks:
-  - {fileID: 114227188229232724}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 42666
+  Name: Transition
+  Min: 0
+  Max: 1
+  Default: 0

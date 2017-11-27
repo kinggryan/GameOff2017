@@ -13,11 +13,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: VictorianDatingSim_FMOD\VictorianDatingSim_FMOD.fspro
-  SourceProjectPathUnformatted: VictorianDatingSim_FMOD\VictorianDatingSim_FMOD.fspro
-  SourceBankPathUnformatted: VictorianDatingSim_FMOD\Build
+  sourceProjectPath: FMOD\VictorianDatingSim\VictorianDatingSim.fspro
+  SourceProjectPathUnformatted: FMOD\VictorianDatingSim\VictorianDatingSim.fspro
+  SourceBankPathUnformatted: FMOD\VictorianDatingSim\Build
   AutomaticEventLoading: 1
-  AutomaticSampleLoading: 0
+  AutomaticSampleLoading: 1
   ImportType: 0
   TargetAssetPath: 
   SpeakerModeSettings:

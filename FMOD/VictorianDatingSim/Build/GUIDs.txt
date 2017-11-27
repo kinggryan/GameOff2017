@@ -1,0 +1,4 @@
+{5e73e5eb-475b-47f7-8575-e007b46e1ed4} event:/ParlorMusic
+{109e93d2-9c35-458f-b269-f40a97ff0925} bus:/
+{85e36035-3a3a-4d74-8bdb-c519524eed9e} bus:/Reverb
+{f8ef3be5-0a87-4c42-b5d5-5ee191358e5d} bank:/Master Bank
