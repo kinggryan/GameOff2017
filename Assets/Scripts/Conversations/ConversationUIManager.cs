@@ -93,7 +93,7 @@ public class ConversationUIManager : MonoBehaviour {
 			blackScreenColor.a = Mathf.Lerp (blackScreenColor.a, 1f, blackScreenFadeRate * Time.deltaTime);
 			blackScreen.color = blackScreenColor;
 
-			Debug.Log ("Fade Out - New color " + blackScreenColor);
+//			Debug.Log ("Fade Out - New color " + blackScreenColor);
 
 			// If we faded in enough, broadcast the message
 			if (oldAlpha < 1 - fadedMessageThreshold && blackScreenColor.a >= 1 - fadedMessageThreshold) {
@@ -104,7 +104,7 @@ public class ConversationUIManager : MonoBehaviour {
 			var oldAlpha = blackScreenColor.a;
 			blackScreenColor.a = Mathf.Lerp (blackScreenColor.a, 0f, blackScreenFadeRate * Time.deltaTime);
 			blackScreen.color = blackScreenColor;
-			Debug.Log ("New color " + blackScreenColor);
+//			Debug.Log ("New color " + blackScreenColor);
 
 			// If we faded in enough, broadcast the message
 			if (oldAlpha > fadedMessageThreshold && blackScreenColor.a <= fadedMessageThreshold) {
