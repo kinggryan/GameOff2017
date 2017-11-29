@@ -4,4 +4,19 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Resources/Outside.unity
+    guid: 3ab2fcb32261e486ea4950f4121c325e
+  - enabled: 1
+    path: Assets/Scenes/Resources/parlor1.unity
+    guid: e1ed5740deef6419da458b0c9d85e43f
+  - enabled: 1
+    path: Assets/Scenes/Resources/dining.unity
+    guid: db5effc0d848a42b3b3849d4aa500ea8
+  - enabled: 1
+    path: Assets/Scenes/Resources/parlor2.unity
+    guid: c1b5a9f8230774cec9324ca6797b9973
+  - enabled: 1
+    path: Assets/Scenes/Resources/parlor3.unity
+    guid: 00bf12d0fd6564e7ab3590aba92cf70a

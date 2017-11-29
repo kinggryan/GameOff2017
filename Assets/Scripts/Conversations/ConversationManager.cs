@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using Ink.Runtime;
 
@@ -10,6 +11,7 @@ public class ConversationManager : MonoBehaviour {
 	public ConversationUIManager uiManager;
 	private ScriptWrapper story;
 	private bool inConversation = false;
+	private bool justHandledEventOrLoadedScene = false;
 
 	float delayDuration = 0.5f;
 	float delayTimer = 0.5f;
@@ -39,10 +41,13 @@ public class ConversationManager : MonoBehaviour {
 		if (delayTimer >= 0)
 			return;
 
-		// If there's a line of dialogue, display it
-		if (story.CanGetNextLine ()) {
-//			Debug.Log ("Getting next line");
-
+		// If we need to do a different thing
+		if (StoryHasGameEvent ()) {
+			// Do the thing
+			HandleGameEvent();
+		} else if (StoryShouldLoadNewScene ()) {
+			LoadNextScene ();
+		} else if (story.CanGetNextLine ()) {
 			// Show the next line if we only showed a nameplate just now
 			if (DisplayDialogue (story.GetNextLine ()) && story.CanGetChoices()) {
 				DisplayChoices (story.GetChoices ());
@@ -66,8 +71,31 @@ public class ConversationManager : MonoBehaviour {
 		ProgressConversation();
 	}
 
+	bool StoryHasGameEvent() {
+		if (justHandledEventOrLoadedScene)
+			return false;
+
+		var tags = story.GetTags ();
+		foreach (var tag in tags) {
+			if (tag.Contains ("gameEvent"))
+				return true;
+		}
+		return false;
+	}
+
+	bool StoryShouldLoadNewScene() {
+		if (justHandledEventOrLoadedScene)
+			return false;
+		
+		var tags = story.GetTags ();
+		foreach (var tag in tags) {
+			if (tag.Contains ("loadScene"))
+				return true;
+		}
+		return false;
+	}
+
 	bool DisplayDialogue(string dialogue) {
-//		Debug.Log (Time.time + " Displaying dialogue " + dialogue);
 		return uiManager.DisplayDialogue (dialogue);
 	}
 
@@ -80,5 +108,51 @@ public class ConversationManager : MonoBehaviour {
 		Debug.Log ("Ending conversation");
 		conversationUIParent.SetActive(false);
 		inConversation = false;
+	}
+
+	void HandleGameEvent() {
+		var tags = story.GetTags ();
+		foreach (var str in tags) {
+			if (str.Contains("gameEvent")) {
+				DoEventName (str.Substring ("gameEvent ".Length));
+			}
+		}
+
+		// Do a thing
+		justHandledEventOrLoadedScene = true;
+	}
+
+	void DoEventName(string name) {
+		// Do the event name
+	}
+
+	void LoadNextScene() {
+		var tags = story.GetTags ();
+		foreach (var str in tags) {
+			if (str.Contains("loadScene")) {
+				var sceneName = str.Substring ("loadScene ".Length);
+				SceneManager.LoadScene(IndexForSceneName(sceneName), LoadSceneMode.Single);
+				break;
+			}
+		}
+
+		// Load the scene
+		justHandledEventOrLoadedScene = true;
+	}
+
+	int IndexForSceneName(string str) {
+		switch (str) {
+		case "Outside":
+			return 0;
+		case "parlor1":
+			return 1;
+		case "dining":
+			return 2;
+		case "parlor2":
+			return 3;
+		case "parlor3":
+			return 4;
+		}
+		return -1;
 	}
 }

@@ -31,7 +31,7 @@ public class ScriptWrapper : MonoBehaviour {
 	public string GetNextLine()
 	{
 		var nextLine = _inkStory.Continue ();
-		Debug.Log ("Next line: " + nextLine);
+//		Debug.Log ("Next line: " + nextLine);
 		return nextLine;
 	}
 
@@ -41,5 +41,9 @@ public class ScriptWrapper : MonoBehaviour {
 
 	public void ChooseChoiceIndex(int index) {
 		_inkStory.ChooseChoiceIndex (index);
+	}
+
+	public List<string> GetTags() {
+		return _inkStory.currentTags;
 	}
 }
