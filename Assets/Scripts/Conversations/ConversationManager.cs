@@ -9,6 +9,8 @@ public class ConversationManager : MonoBehaviour {
 
 	public GameObject conversationUIParent;
 	public ConversationUIManager uiManager;
+	public SoundEngine soundEngine;
+
 	private ScriptWrapper story;
 	private bool inConversation = false;
 	private bool justHandledEventOrLoadedScene = false;
@@ -178,5 +180,18 @@ public class ConversationManager : MonoBehaviour {
 
 	public void OnScreenFadeOutComplete() {
 		SceneManager.LoadScene (sceneIndexToLoadOnFadeOut);
+	}
+
+	void PlaySoundsForThisLine() {
+		foreach (var tag in story.GetTags()) {
+			
+		}
+	}
+
+	void PlaySoundWithTag(string tag) {
+		if (tag.Contains ("playSound")) {
+			var soundName = tag.Substring ("playSound ".Length);
+			soundEngine.PlaySoundWithName (soundName);
+		}
 	}
 }
