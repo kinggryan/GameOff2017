@@ -14,6 +14,7 @@ public class SoundEngine : MonoBehaviour {
 	public EventAndName[] events;
     
 	public void PlaySoundWithName(string name) {
+		print("Picking sound");
 		var playedSound = false;
 		foreach (var eventAndName in events) {
 			if (eventAndName.name == name) {

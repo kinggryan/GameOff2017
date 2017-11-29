@@ -70,11 +70,13 @@ VAR bigger2 = 0
 == invitation ==
 //outside scene
 //background music is folksy version of normal theme
+
+
 #loadScene outside
 {titles} {full_name()}: Standing before an impressive manor, you quickly check the invitaion you received a fortnight prior, disbelieving your good fortnue. //player starts in front of the door 
 {titles} {full_name()}: "The Marquess and Marchioness of Derby request the pleasure of Miss Ruth Leigh's company at dinner on Thursday, the 14th of April, at 5 o’clock."//Will be displayed on a fancy calling card
 {titles} {full_name()}: Along with the decadent note came a glorious gown and heels, which you now don. You are not used to such elaborate garments and buckle under the weight of the many layers. Attached to the dress was a short note, in a script dissimilar to what appeared on the invitation
-"Surely, my dear Ruth, you have nothing to wear?" // also on fancy paper
+"Surely, my dear Ruth, you have nothing to wear?"  // also on fancy paper
 {titles} {full_name()}:
 * You were disarmed by hostile familarity of the note, <>
 -> hostile
