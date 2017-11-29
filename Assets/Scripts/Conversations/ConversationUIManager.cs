@@ -8,9 +8,13 @@ public class ConversationUIManager : MonoBehaviour {
 	public UnityEngine.UI.Image blackScreen;
 	public UnityEngine.UI.Text nameBox;
 	public UnityEngine.UI.Text dialogueBox;
+	public UnityEngine.UI.Image portraitImage;
 	public GameObject choicesParent;
 	public UnityEngine.UI.Text[] choiceBoxes;
 	public ConversationManager conversationManager;
+
+	public Sprite bathPortrait;
+//	public Sprite 
 
 	private bool showBlackScreen = false;
 	private float blackScreenFadeRate = 3f;
@@ -47,8 +51,7 @@ public class ConversationUIManager : MonoBehaviour {
 		var dialogue = GetDialogueFromString(dialogueRaw);
 		dialogueBox.text = dialogue.text;
 		nameBox.text = dialogue.name;
-
-//		Debug.Log ("N: " + dialogue.name + " T: '" + dialogue.text + "'");
+		ShowCharacterPortrait (dialogue.name);
 
 		// If we only showed a nameplate, return true
 		if (dialogue.name != "" && (dialogue.text == "" || dialogue.text == "\n")) {
@@ -74,15 +77,20 @@ public class ConversationUIManager : MonoBehaviour {
 	}
 
 	private Dialogue GetDialogueFromString(string dialogue) {
+		// HACK: Remove the leading 1 that randomly comes from ink
+		if (dialogue.StartsWith ("1 "))
+			dialogue = dialogue.Substring (2);
 		var seperators = new char[]{ ':' };
 		var twoStrings = dialogue.Split (seperators, dialogue.Length);
 		var retDialogue = new Dialogue ();
+
 		if (twoStrings.Length == 1) {
 			retDialogue.text = dialogue;
 			retDialogue.name = "";
 		} else {
 			retDialogue.text = twoStrings [1];
 			retDialogue.name = twoStrings [0];
+			retDialogue.name = retDialogue.name.Replace (",", "");
 		}
 		return retDialogue;
 	}
@@ -116,5 +124,23 @@ public class ConversationUIManager : MonoBehaviour {
 
 	public void FadeOut() {
 		showBlackScreen = true;
+	}
+
+	void ShowCharacterPortrait(string name) {
+		if (name.Contains ("Bath")) {
+			portraitImage.sprite = (Sprite)Resources.Load ("MarquessOfBath");
+		} else if (name.Contains ("Camilla")) {
+			portraitImage.sprite = (Sprite)Resources.Load ("LadyCamilla");
+		} else if (name.Contains ("Derby")) {
+			portraitImage.sprite = (Sprite)Resources.Load ("MarchionessOfDerby");
+		} else if (name.Contains ("Essex")) {
+			portraitImage.sprite = (Sprite)Resources.Load ("EarlofEssex");
+		} else if (name.Contains ("Ascot")) {
+			portraitImage.sprite = (Sprite)Resources.Load ("ViscountAscot");	
+		} else if (name.Contains ("Ruth") || name.Contains ("Maidstone")) {
+			portraitImage.sprite = (Sprite)Resources.Load ("Player02");
+		} else {
+			portraitImage.sprite = null;
+		}
 	}
 }
