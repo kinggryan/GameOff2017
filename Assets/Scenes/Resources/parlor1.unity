@@ -3421,6 +3421,66 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &661661576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1806298423327830, guid: 32dbf6fcda66a7f498fcfa8709d41640,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 661661577}
+  - component: {fileID: 661661578}
+  m_Layer: 0
+  m_Name: Ghoul
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &661661577
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4370156528749634, guid: 32dbf6fcda66a7f498fcfa8709d41640,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 661661576}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1294853160}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &661661578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114053520421861626, guid: 32dbf6fcda66a7f498fcfa8709d41640,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 661661576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86dd0732abf60614ba9e025e4a569742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loop: 0
+  random: 0
+  playOnAwake: 0
+  volume: 1
+  pitch: 0
+  pitchRandomization: 0
+  audioClip:
+  - {fileID: 8300000, guid: 4473ac6fe193cb44aa99da4247b64dc3, type: 3}
+  listener: {fileID: 0}
+  threeDee: 0
+  threeDeeMultiplier: 1
+  panMultiplier: 0
+  externalVolumeModifier: 1
+  externalPitchModifier: 0
+  playerDistance: 0
+  playerXDistance: 0
+  playerYDistance: 0
 --- !u!1 &793400527
 GameObject:
   m_ObjectHideFlags: 0
@@ -6086,6 +6146,82 @@ Transform:
   - {fileID: 1927579824}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1294853158
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1218726654230958, guid: 32dbf6fcda66a7f498fcfa8709d41640,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1294853160}
+  - component: {fileID: 1294853159}
+  m_Layer: 0
+  m_Name: SoundEngine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1294853159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1294853158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9864250ef0cc17347883d8577f1b6f75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events:
+  - name: essexGreet
+    soundEvent: {fileID: 661661578}
+  - name: essexPositive
+    soundEvent: {fileID: 661661578}
+  - name: essexNegative
+    soundEvent: {fileID: 661661578}
+  - name: camillaGreet
+    soundEvent: {fileID: 661661578}
+  - name: camillaPositive
+    soundEvent: {fileID: 661661578}
+  - name: camillaNegative
+    soundEvent: {fileID: 661661578}
+  - name: amyGreet
+    soundEvent: {fileID: 661661578}
+  - name: amyPositive
+    soundEvent: {fileID: 661661578}
+  - name: amyNegative
+    soundEvent: {fileID: 661661578}
+  - name: amyIntro
+    soundEvent: {fileID: 661661578}
+  - name: bathGreet
+    soundEvent: {fileID: 661661578}
+  - name: bathPositive
+    soundEvent: {fileID: 661661578}
+  - name: bathNegative
+    soundEvent: {fileID: 661661578}
+  - name: ascotGreet
+    soundEvent: {fileID: 661661578}
+  - name: ascotPositive
+    soundEvent: {fileID: 661661578}
+  - name: ascotNegative
+    soundEvent: {fileID: 661661578}
+--- !u!4 &1294853160
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4406380048456346, guid: 32dbf6fcda66a7f498fcfa8709d41640,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1294853158}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 661661577}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1426183236
 GameObject:
