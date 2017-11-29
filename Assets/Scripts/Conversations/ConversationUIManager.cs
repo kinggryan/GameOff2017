@@ -9,12 +9,17 @@ public class ConversationUIManager : MonoBehaviour {
 	public UnityEngine.UI.Text nameBox;
 	public UnityEngine.UI.Text dialogueBox;
 	public UnityEngine.UI.Image portraitImage;
+	public UnityEngine.UI.Image noPortraitImage;
 	public GameObject choicesParent;
 	public UnityEngine.UI.Text[] choiceBoxes;
 	public ConversationManager conversationManager;
 
 	public Sprite bathPortrait;
-//	public Sprite 
+	public Sprite camillaPortrait;
+	public Sprite derbyPortrait;
+	public Sprite essexPortrait;
+	public Sprite ascotPortrait;
+	public Sprite playerPortrait;
 
 	private bool showBlackScreen = false;
 	private float blackScreenFadeRate = 3f;
@@ -127,20 +132,23 @@ public class ConversationUIManager : MonoBehaviour {
 	}
 
 	void ShowCharacterPortrait(string name) {
+		portraitImage.enabled = true;
+		noPortraitImage.enabled = false;
 		if (name.Contains ("Bath")) {
-			portraitImage.sprite = (Sprite)Resources.Load ("MarquessOfBath");
+			portraitImage.sprite = bathPortrait;
 		} else if (name.Contains ("Camilla")) {
-			portraitImage.sprite = (Sprite)Resources.Load ("LadyCamilla");
+			portraitImage.sprite = camillaPortrait;
 		} else if (name.Contains ("Derby")) {
-			portraitImage.sprite = (Sprite)Resources.Load ("MarchionessOfDerby");
+			portraitImage.sprite = derbyPortrait;
 		} else if (name.Contains ("Essex")) {
-			portraitImage.sprite = (Sprite)Resources.Load ("EarlofEssex");
+			portraitImage.sprite = essexPortrait;
 		} else if (name.Contains ("Ascot")) {
-			portraitImage.sprite = (Sprite)Resources.Load ("ViscountAscot");	
+			portraitImage.sprite = ascotPortrait;	
 		} else if (name.Contains ("Ruth") || name.Contains ("Maidstone")) {
-			portraitImage.sprite = (Sprite)Resources.Load ("Player02");
+			portraitImage.sprite = playerPortrait;
 		} else {
-			portraitImage.sprite = null;
+			noPortraitImage.enabled = true;
+			portraitImage.enabled = false;
 		}
 	}
 }
