@@ -101,7 +101,7 @@ VAR bigger2 = 0
 {time_waited < 4} {titles} {full_name()}: {{decrease_stat(temperment)} You arrive at the townhouse | After occupying ourself for a short while, you arrived |Surely, you figure, it is time to enter | If fifteen minutes is fashionably late, then I must be excelling in style at}{five minutes before the hour.|at Rose House again at exactly five o'clock. | fifteen minutes past the hour. | thirty minutes past the hour. | fourty-five past the hour}
 
     * You enter Rose House
-    <> with much trepidation. 
+    <> with much trepidation.
     
    //Temperment is now {temperment} //Test for stat_increase(). Will remove in game
     ->introductions
@@ -114,7 +114,6 @@ VAR bigger2 = 0
 === introductions ===
 //parlor1 scene
 //background music is normal parlor theme
-
 
 #loadScene parlor1
 {titles} {full_name()}:A manservant stands before you and looks approvingly at your dress. 

@@ -16,9 +16,15 @@ public class ConversationManager : MonoBehaviour {
 	float delayDuration = 0.5f;
 	float delayTimer = 0.5f;
 
+	int sceneIndexToLoadOnFadeOut = -1;
+
 	void Start() {
 		story = GetComponent<ScriptWrapper> ();
+		uiManager.conversationManager = this;
 //		uiManager = UnityEngine.Object.FindObjectOfType<ConversationUIManager> ();
+
+		// Show the current line of story
+		DisplayDialogue(story.GetCurrentLine());
 	}
 
 	void Update() {
@@ -41,23 +47,33 @@ public class ConversationManager : MonoBehaviour {
 		if (delayTimer >= 0)
 			return;
 
+		foreach (var tag in story.GetTags()) {
+			Debug.Log ("Tag " + Time.time + " " + tag);
+		}
+
 		// If we need to do a different thing
-		if (StoryHasGameEvent ()) {
-			// Do the thing
-			HandleGameEvent();
-		} else if (StoryShouldLoadNewScene ()) {
-			LoadNextScene ();
-		} else if (story.CanGetNextLine ()) {
+		if (story.CanGetNextLine ()) {
+			justHandledEventOrLoadedScene = false;
 			// Show the next line if we only showed a nameplate just now
 			if (DisplayDialogue (story.GetNextLine ()) && story.CanGetChoices()) {
 				DisplayChoices (story.GetChoices ());
 			}
 		} else if (story.CanGetChoices ()) {
+			justHandledEventOrLoadedScene = false;
 			Debug.Log ("Getting choices");
 			DisplayChoices (story.GetChoices ());
 		} else {
+			justHandledEventOrLoadedScene = false;
 			Debug.Log ("Ending dialogue");
 			EndDialogue ();
+		}
+
+		// Load game events or scenes if we got that tag
+		if (StoryHasGameEvent ()) {
+			// Do the thing
+			HandleGameEvent();
+		} else if (StoryShouldLoadNewScene ()) {
+			LoadNextScene ();
 		}
 
 		delayTimer += delayDuration;
@@ -131,12 +147,16 @@ public class ConversationManager : MonoBehaviour {
 		foreach (var str in tags) {
 			if (str.Contains("loadScene")) {
 				var sceneName = str.Substring ("loadScene ".Length);
-				SceneManager.LoadScene(IndexForSceneName(sceneName), LoadSceneMode.Single);
+				var sceneIndex = IndexForSceneName (sceneName);
+				if (sceneIndex >= 0) {
+					sceneIndexToLoadOnFadeOut = sceneIndex;
+					uiManager.FadeOut ();
+				}
+
 				break;
 			}
 		}
 
-		// Load the scene
 		justHandledEventOrLoadedScene = true;
 	}
 
@@ -154,5 +174,9 @@ public class ConversationManager : MonoBehaviour {
 			return 4;
 		}
 		return -1;
+	}
+
+	public void OnScreenFadeOutComplete() {
+		SceneManager.LoadScene (sceneIndexToLoadOnFadeOut);
 	}
 }

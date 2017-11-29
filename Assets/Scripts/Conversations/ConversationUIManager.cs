@@ -10,6 +10,7 @@ public class ConversationUIManager : MonoBehaviour {
 	public UnityEngine.UI.Text dialogueBox;
 	public GameObject choicesParent;
 	public UnityEngine.UI.Text[] choiceBoxes;
+	public ConversationManager conversationManager;
 
 	private bool showBlackScreen = false;
 	private float blackScreenFadeRate = 3f;
@@ -97,7 +98,7 @@ public class ConversationUIManager : MonoBehaviour {
 
 			// If we faded in enough, broadcast the message
 			if (oldAlpha < 1 - fadedMessageThreshold && blackScreenColor.a >= 1 - fadedMessageThreshold) {
-				BroadcastMessage ("OnScreenFadeOutComplete", SendMessageOptions.DontRequireReceiver);
+				conversationManager.OnScreenFadeOutComplete ();
 			}
 		} else {
 			var blackScreenColor = blackScreen.color;

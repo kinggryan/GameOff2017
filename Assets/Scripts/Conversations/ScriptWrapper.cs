@@ -9,11 +9,12 @@ public class ScriptWrapper : MonoBehaviour {
 	public TextAsset inkAsset;
 
 	// The ink story that we're wrapping
-	Story _inkStory;
+	static Story _inkStory;
 
 	void Awake()
 	{
-		_inkStory = new Story(inkAsset.text);
+		if(_inkStory == null) 
+			_inkStory = new Story(inkAsset.text);
 	}
 
 	public bool CanGetNextLine() {
@@ -33,6 +34,11 @@ public class ScriptWrapper : MonoBehaviour {
 		var nextLine = _inkStory.Continue ();
 //		Debug.Log ("Next line: " + nextLine);
 		return nextLine;
+	}
+
+	public string GetCurrentLine()
+	{
+		return _inkStory.currentText;
 	}
 
 	public List<Choice> GetChoices() {
