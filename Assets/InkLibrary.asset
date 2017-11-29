@@ -17,32 +17,5 @@ MonoBehaviour:
     jsonAsset: {fileID: 4900000, guid: b815fee3174364ce292aee7500eae436, type: 3}
   - compileAutomatically: 0
     inkAsset: {fileID: 102900000, guid: ff25e4a9b0de4418b80de2baa5c29b6e, type: 3}
-    jsonAsset: {fileID: 0}
-  compilationStack:
-  - state: 1
-    inkFile:
-      compileAutomatically: 0
-      inkAsset: {fileID: 102900000, guid: da449b2de7ef14791a71c5943f2ba76e, type: 3}
-      jsonAsset: {fileID: 4900000, guid: f1634b2049f42483ba7d038afb230ed5, type: 3}
-    inkAbsoluteFilePath: E:/Projects/2017/Games/GameOff2017/Assets/Plugins/Ink/Example/Ink/GameOff.ink
-    jsonAbsoluteFilePath: E:/Projects/2017/Games/GameOff2017/Assets/Plugins/Ink/Example/Ink/GameOff.json
-    output: 
-    errorOutput: 
-  - state: 1
-    inkFile:
-      compileAutomatically: 0
-      inkAsset: {fileID: 102900000, guid: da449b2de7ef14791a71c5943f2ba76e, type: 3}
-      jsonAsset: {fileID: 4900000, guid: f1634b2049f42483ba7d038afb230ed5, type: 3}
-    inkAbsoluteFilePath: /Users/ryan/games/GameOff2017/Assets/Plugins/Ink/Example/Ink/GameOff.ink
-    jsonAbsoluteFilePath: /Users/ryan/games/GameOff2017/Assets/Plugins/Ink/Example/Ink/GameOff.json
-    output: 
-    errorOutput: 
-  - state: 1
-    inkFile:
-      compileAutomatically: 0
-      inkAsset: {fileID: 102900000, guid: ff25e4a9b0de4418b80de2baa5c29b6e, type: 3}
-      jsonAsset: {fileID: 0}
-    inkAbsoluteFilePath: /Users/ryan/games/GameOff2017/Assets/Plugins/Ink/Example/Ink/GameOff.ink
-    jsonAbsoluteFilePath: /Users/ryan/games/GameOff2017/Assets/Plugins/Ink/Example/Ink/GameOff.json
-    output: 
-    errorOutput: 
+    jsonAsset: {fileID: 4900000, guid: 55e9bc9ffe529437dba6e837a0c222bb, type: 3}
+  compilationStack: []
