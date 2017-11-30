@@ -1131,12 +1131,12 @@ MonoBehaviour:
   - {fileID: 114648711861966520}
   - {fileID: 114769343617787230}
   conversationManager: {fileID: 0}
-  bathPortrait: {fileID: 21300000, guid: 643a5f979e3401242ab6ba923ddf57cc, type: 3}
-  camillaPortrait: {fileID: 21300000, guid: ee954d8f1a99b7543aa2bf984d1026b7, type: 3}
-  derbyPortrait: {fileID: 21300000, guid: bd029ff88f72a6041b08d9077e27f6a7, type: 3}
-  essexPortrait: {fileID: 21300000, guid: 3f02604e86b2c3f478fbbf63ac081416, type: 3}
-  ascotPortrait: {fileID: 21300000, guid: 32414b2e3a042584f915c668b84637ac, type: 3}
-  playerPortrait: {fileID: 21300000, guid: 23e7389c6a83594498baaebe8cedbca9, type: 3}
+  bathPortrait: {fileID: 21300000, guid: 8cb332917c66e4741a8eb92ddf045a2e, type: 3}
+  camillaPortrait: {fileID: 21300000, guid: 2b226ce3efe5b419d8ff42f07d772e43, type: 3}
+  derbyPortrait: {fileID: 21300000, guid: 1bc39f9e0bbff42d8beff153af07264f, type: 3}
+  essexPortrait: {fileID: 21300000, guid: ac8c088a1fbe04090be30134aa8b55df, type: 3}
+  ascotPortrait: {fileID: 21300000, guid: 3c4cbd6780b56451cb4a1a548bbee03e, type: 3}
+  playerPortrait: {fileID: 21300000, guid: 68d2b1272a1ee48078d7fdd321052773, type: 3}
 --- !u!114 &114871493096346176
 MonoBehaviour:
   m_ObjectHideFlags: 1
