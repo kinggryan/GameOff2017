@@ -2013,6 +2013,7 @@ Tilemap:
     m_DirtyIndex: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &205004429
 Prefab:
   m_ObjectHideFlags: 0
@@ -2178,6 +2179,8 @@ MonoBehaviour:
 >>>>>>> 8604cec8c3993a0be737adb233c8ec47f8533dcf
 =======
 >>>>>>> parent of 5f5dad6... Merge branch 'master' of https://github.com/kinggryan/GameOff2017
+=======
+>>>>>>> parent of e2d9e15... basically done ink dialouge. soundevent script fix
 --- !u!1001 &841897330
 Prefab:
   m_ObjectHideFlags: 0

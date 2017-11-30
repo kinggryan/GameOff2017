@@ -95,6 +95,7 @@ VAR bigger2 = 0
 {titles} {full_name()}: Along with the decadent note came a glorious gown and heels, which you now don. You are not used to such elaborate garments and buckle under the weight of the many layers.
 {titles} {full_name()}: Attached to the dress was a short note, in a script dissimilar to what appeared on the invitation
 <<<<<<< HEAD
+<<<<<<< HEAD
 {titles} {full_name()}: "Surely, my dear Ruth, you have nothing to wear?" 
 >>>>>>> 8604cec8c3993a0be737adb233c8ec47f8533dcf
 =======
@@ -107,6 +108,10 @@ VAR bigger2 = 0
 {titles} {full_name()}: Attached to the dress was a short note, in a script dissimilar to what appeared on the invitation
 "Surely, my dear Ruth, you have nothing to wear?" // also on fancy paper
 >>>>>>> 1e1c4bc9ee5bcc66c11d39015a92f56fead075a1
+=======
+"Surely, my dear Ruth, you have nothing to wear?"  // also on fancy paper
+
+>>>>>>> parent of e2d9e15... basically done ink dialouge. soundevent script fix
 {titles} {full_name()}:
 * You were disarmed by hostile familarity of the note, <>
    but the chance to mingle with the likes of high society were too promising to miss. 
@@ -574,6 +579,7 @@ A footman places a shallow bowl of pea soup in front of you. Do you..
 	  {decrease_stat(temperment)}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	    You receive narrowed eyes and throat clearings from the diners around you, except for the Viscount Ascot. 
 	    When he sees you dip your bread into the pea soup, he chuckles, then mimes doing it himself.
 	  #playSound ascotPositive
@@ -586,6 +592,11 @@ A footman places a shallow bowl of pea soup in front of you. Do you..
 	  When he sees you dip your bread into the pea soup, he chuckles, then mimes doing it himself.
 	  #playSound ascotPositive
 >>>>>>> parent of 5f5dad6... Merge branch 'master' of https://github.com/kinggryan/GameOff2017
+=======
+	    You receive narrowed eyes and throat clearings from the diners around you, except for the Viscount Ascot. 
+	  When he sees you dip your bread into the pea soup, he chuckles, then mimes doing it himself.
+	  #playSound ascotPositive
+>>>>>>> parent of e2d9e15... basically done ink dialouge. soundevent script fix
 	    
 	* Eat it with a spoon, sipping from the side 
 	  {increase_stat(temperment)}
@@ -679,6 +690,7 @@ There is a lull in the conversation
 {NPC_full_name(Essex, Essex_title)}: This dinner is excellent. You looked as though you were especially enjoying your soup.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 *It was so tasty I thought about asking for seconds
 	{decrease_stat(temperment)}
@@ -703,12 +715,21 @@ There is a lull in the conversation
 -->dinner_options
 >>>>>>> 8604cec8c3993a0be737adb233c8ec47f8533dcf
 =======
+=======
 
 
 *It was so tasty I thought about asking for seconds
 	{decrease_stat(temperment)}
      {NPC_full_name(Essex, Essex_title)}: Well, good that you didn't. It's most unbecoming to ask for second helpings of soup, unless it's chowder of course. #playSound essexNegative
 * Actually, I preferred the fish.
+>>>>>>> parent of e2d9e15... basically done ink dialouge. soundevent script fix
+
+
+*It was so tasty I thought about asking for seconds
+	{decrease_stat(temperment)}
+     {NPC_full_name(Essex, Essex_title)}: Well, good that you didn't. It's most unbecoming to ask for second helpings of soup, unless it's chowder of course. #playSound essexNegative
+* Actually, I preferred the fish.
+<<<<<<< HEAD
 >>>>>>> parent of 5f5dad6... Merge branch 'master' of https://github.com/kinggryan/GameOff2017
 
 
@@ -716,6 +737,8 @@ There is a lull in the conversation
 	{decrease_stat(temperment)}
      {NPC_full_name(Essex, Essex_title)}: Well, good that you didn't. It's most unbecoming to ask for second helpings of soup, unless it's chowder of course. #playSound essexNegative
 * Actually, I preferred the fish.
+=======
+>>>>>>> parent of e2d9e15... basically done ink dialouge. soundevent script fix
 
 ->dinner_options
 
