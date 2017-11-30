@@ -6403,6 +6403,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32dbf6fcda66a7f498fcfa8709d41640, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1506669638 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114024558124957950, guid: 32dbf6fcda66a7f498fcfa8709d41640,
+    type: 2}
+  m_PrefabInternal: {fileID: 1506669637}
+  m_Script: {fileID: 11500000, guid: 9864250ef0cc17347883d8577f1b6f75, type: 3}
 --- !u!1001 &1530834094
 Prefab:
   m_ObjectHideFlags: 0
@@ -6467,6 +6473,11 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -320
       objectReference: {fileID: 0}
+    - target: {fileID: 114027632223402480, guid: c1ea430b77b0b4accbf121a88e0b93f0,
+        type: 2}
+      propertyPath: soundEngine
+      value: 
+      objectReference: {fileID: 1506669638}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1ea430b77b0b4accbf121a88e0b93f0, type: 2}
   m_IsPrefabParent: 0
