@@ -41,9 +41,7 @@ public class MusicTransition : MonoBehaviour {
 				destination.externalVolumeModifier += Time.deltaTime / transitionTime;
 			}
 			else {
-				print("fade timer: " + source.fadeOutTimer);
 				if (source.fadeOutTimer <= 0.02f){
-					print("Music please play");
 					destination.externalVolumeModifier = 1;
 					destination.PlaySound();
 					transition = false;

@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundEvent : MonoBehaviour {
 
-<<<<<<< HEAD
 
 public bool loop;
 public bool random;
@@ -26,6 +26,8 @@ public AudioClip[] audioClip;
     
 private int clip = 0;
 private int randomClip;
+public float waitTime;
+public float waitRange;
 private float actualPitch;
 public Transform listener;
 public bool threeDee;
@@ -33,6 +35,7 @@ public float threeDeeMultiplier = 1;
 public float panMultiplier;
 public float externalVolumeModifier = 1;
 public float externalPitchModifier = 0;
+public AudioMixerGroup output;
 private AudioSource audioSource;
     
 private float playerDistance;
@@ -40,44 +43,15 @@ private float playerXDistance;
 private float playerYDistance;
 private Transform transform;
 
-private List<AudioSource> sourceList;
+
     
 private bool soundPlayed = false;
-=======
-	public bool loop;
-	public bool random;
-	public bool playOnAwake;
-	[Range(0.0f, 1.0f)]
-	public float volume;
-	[Range(-12.0f, 12.0f)]
-	public float pitch;
-	[Range(-12.0f, 12.0f)]
-	public float pitchRandomization;
-	public AudioClip[] audioClip;
-	    
-	private int clip = 0;
-	private int randomClip;
-	private float actualPitch;
-	public Transform listener;
-	public bool threeDee;
-	public float threeDeeMultiplier = 1;
-	public float panMultiplier;
-	public float externalVolumeModifier = 1;
-	public float externalPitchModifier = 0;
-	private AudioSource audioSource;
-	    
-	public float playerDistance;
-	public float playerXDistance;
-	public float playerYDistance;
-	private Transform transform;
-	    
-	private bool soundPlayed = false;
->>>>>>> 8db363c249a2caf1a5996154254acfb6e5a0594c
     
     
     public void PlaySound ()
     {
         AudioSource source = gameObject.AddComponent<AudioSource>();
+        source.outputAudioMixerGroup = output;
         soundPlayed = true;
         if(fadeInTime > 0){
             fadeIn = true;
@@ -105,7 +79,9 @@ private bool soundPlayed = false;
         }
         actualPitch = pitch + externalPitchModifier + Random.Range(-pitchRandomization, pitchRandomization);
         source.pitch = Mathf.Pow(1.05946f, actualPitch);
-        source.loop = loop;
+        if (audioClip.Length <= 1){
+            source.loop = loop;
+        }
         
         audioSource = source;
 
@@ -116,13 +92,10 @@ private bool soundPlayed = false;
             Destroy(source, audioClip[clip].length);
             print("Destroyed");
         }
-<<<<<<< HEAD
         else {
-            sourceList.Add(source);
+            //sourceList.Add(source);
         }
 
-=======
->>>>>>> 8db363c249a2caf1a5996154254acfb6e5a0594c
     }
 
     public void StopSound(){
@@ -143,17 +116,24 @@ private bool soundPlayed = false;
     void Start ()
     {
         transform = gameObject.GetComponent<Transform>();
-        sourceList = new List<AudioSource>();
         if (playOnAwake)
         {
             PlaySound();
         }
     }
     
+    IEnumerator NextClip(){
+        float duration = Random.Range(waitTime - (waitRange/2), waitTime + (waitRange/2));
+        yield return new WaitForSeconds(duration);
+        PlaySound();
+    }
+
     void Update()
-<<<<<<< HEAD
     {
-        
+        if (audioSource && loop && !audioSource.isPlaying && soundPlayed){
+            StartCoroutine("NextClip");
+            soundPlayed = false;
+        }
 
         if (fadeIn){
                 fadeInTimer += Time.deltaTime / fadeInTime;
@@ -178,9 +158,6 @@ private bool soundPlayed = false;
             }
         }
         
-=======
-    {   
->>>>>>> 8db363c249a2caf1a5996154254acfb6e5a0594c
         playerXDistance = transform.position.x - listener.position.x;
         playerYDistance = transform.position.y - listener.position.y;
         if (Mathf.Abs(playerXDistance) >= Mathf.Abs(playerYDistance))

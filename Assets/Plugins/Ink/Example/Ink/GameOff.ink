@@ -68,20 +68,25 @@ VAR bigger2 = 0
 }
 
 == invitation ==
-#changeMusic folksyMusic
-#loadScene outside
-
+<<<<<<< HEAD
 //outside scene
 //background music is folksy version of normal theme
 
 
+#loadScene outside
+{titles} {full_name()}: Standing before an impressive manor, you quickly check the invitaion you received a fortnight prior, disbelieving your good fortnue. //player starts in front of the door 
+{titles} {full_name()}: "The Marquess and Marchioness of Derby request the pleasure of Miss Ruth Leigh's company at dinner on Thursday, the 14th of April, at 5 o’clock."//Will be displayed on a fancy calling card
+{titles} {full_name()}: Along with the decadent note came a glorious gown and heels, which you now don. You are not used to such elaborate garments and buckle under the weight of the many layers. Attached to the dress was a short note, in a script dissimilar to what appeared on the invitation
+"Surely, my dear Ruth, you have nothing to wear?"  // also on fancy paper
+=======
+#changeMusic folksyMusic
 
 {titles} {full_name()}: Standing before an impressive manor, you quickly check the invitaion you received a fortnight prior, disbelieving your good fortnue. //player starts in front of the door 
 {titles} {full_name()}: "The Marquess and Marchioness of Derby request the pleasure of Miss Ruth Leigh's company at dinner on Thursday, the 14th of April, at 5 o’clock."//Will be displayed on a fancy calling card
-{titles} {full_name()}: Along with the decadent note came a glorious gown and heels, which you now don. You are not used to such elaborate garments and buckle under the weight of the many layers.
+{titles} {full_name()}: Along with the decadent note came a glorious gown and heels, which you now don. You are not used to such elaborate garments and buckle under the weight of the many layers. 
 {titles} {full_name()}: Attached to the dress was a short note, in a script dissimilar to what appeared on the invitation
-"Surely, my dear Ruth, you have nothing to wear?"  // also on fancy paper
-
+"Surely, my dear Ruth, you have nothing to wear?" // also on fancy paper
+>>>>>>> 1e1c4bc9ee5bcc66c11d39015a92f56fead075a1
 {titles} {full_name()}:
 * You were disarmed by hostile familarity of the note, <>
    but the chance to mingle with the likes of high society were too promising to miss. 
@@ -182,9 +187,7 @@ Lord Essex: You may address me as Lord Essex, if you find it suitable. I await t
 Lord Ascot: Good evening, or, as they say in great Nippon, konbanwa! I am called Lord Ascot, and not just due to my dashing attire. #playSound ascotGreet
 {titles} {full_name()}: Lord Ascot looks to be an eccentric but clearly a friendly one at that. You sense that he is often the life of the party and is looking for someone who can keep up.
 
-Lord Bath: My lady, your beauty is as radiant as a young moon. I am eager to meet our "golden close of love" as my dear friend Alfred once said. #playSound bathGreet
-Lord Bath: The gentry label me as Lord Bath, but you may call me as you please.
-
+Lord Bath: My lady, your beauty is as radiant as a young moon. I am eager to meet our "golden close of love" as my dear friend Alfred once said. The gentry label me as Lord Bath, but you may call me as you please. #playSound bathGreet
 {titles} {full_name()}: Lord Bath might need to follow his name-sake as his disheleved apperance seems at odds with the occasion. Still you note his easy flirtation. 
 
 {titles} {full_name()}: The Marchioness then turns to the queer-looking woman and remarks.
@@ -379,11 +382,7 @@ How do you address Lady Camilla?
 
 -(talk_Camiila)
 {NPC_full_name(Camilla, Camilla_title)}: Hello, Miss Leigh. You must be wondering why someone of your low station received an invitation to an event as luxurious as my mother's party. 
-
-{NPC_full_name(Camilla, Camilla_title)}: Well, I'm the one who sent it! I saw you walking down Regent Street and knew you'd be perfect for my needs. 
-{NPC_full_name(Camilla, Camilla_title)}: The way you walked and dressed... why, it looked as though you just didn't care what anyone thought of you! 
- 
-
+{NPC_full_name(Camilla, Camilla_title)}: Well, I'm the one who sent it! I saw you walking down Regent Street and knew you'd be perfect for my needs. The way you walked and dressed... why, it looked as though you just didn't care what anyone thought of you! 
 {titles} {full_name()}: {NPC_full_name(Camilla, Camilla_title)} is looking at you eagerly for a response.
 
     *You look enchanting tonight. 
@@ -546,7 +545,7 @@ A footman places a shallow bowl of pea soup in front of you. Do you..
 	  {increase_stat(wit)}
 	  {decrease_stat(temperment)}
 	    You receive narrowed eyes and throat clearings from the diners around you, except for the Viscount Ascot. 
-	  When he sees you dip your bread into the pea soup, he chuckles, then mimes doing it himself.
+	    When he sees you dip your bread into the pea soup, he chuckles, then mimes doing it himself.
 	  #playSound ascotPositive
 	    
 	* Eat it with a spoon, sipping from the side 
@@ -639,13 +638,6 @@ There is a lull in the conversation
 
 -(dinner_Essex)
 {NPC_full_name(Essex, Essex_title)}: This dinner is excellent. You looked as though you were especially enjoying your soup.
-
-
-*It was so tasty I thought about asking for seconds
-	{decrease_stat(temperment)}
-     {NPC_full_name(Essex, Essex_title)}: Well, good that you didn't. It's most unbecoming to ask for second helpings of soup, unless it's chowder of course. #playSound essexNegative
-* Actually, I preferred the fish.
-
 
 *It was so tasty I thought about asking for seconds
 	{decrease_stat(temperment)}

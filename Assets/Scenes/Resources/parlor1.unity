@@ -214,6 +214,7 @@ MonoBehaviour:
   panMultiplier: 0
   externalVolumeModifier: 1
   externalPitchModifier: 0
+  output: {fileID: 243073045253021606, guid: 5d8468aeda94c7e46892ee1dff486895, type: 2}
 --- !u!1 &119339047
 GameObject:
   m_ObjectHideFlags: 0
@@ -3406,6 +3407,7 @@ MonoBehaviour:
   panMultiplier: 0
   externalVolumeModifier: 1
   externalPitchModifier: 0
+  output: {fileID: 243073045253021606, guid: 5d8468aeda94c7e46892ee1dff486895, type: 2}
 --- !u!1 &393063296
 GameObject:
   m_ObjectHideFlags: 0
@@ -3618,7 +3620,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 793400527}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86dd0732abf60614ba9e025e4a569742, type: 3}
   m_Name: 
@@ -3640,6 +3642,7 @@ MonoBehaviour:
   panMultiplier: 0
   externalVolumeModifier: 1
   externalPitchModifier: 0
+  output: {fileID: 243073045253021606, guid: 5d8468aeda94c7e46892ee1dff486895, type: 2}
 --- !u!1001 &841897330
 Prefab:
   m_ObjectHideFlags: 0
@@ -6276,6 +6279,7 @@ MonoBehaviour:
   panMultiplier: 0
   externalVolumeModifier: 1
   externalPitchModifier: 0
+  output: {fileID: 243073045253021606, guid: 5d8468aeda94c7e46892ee1dff486895, type: 2}
 --- !u!1001 &1506669637
 Prefab:
   m_ObjectHideFlags: 0
@@ -6403,6 +6407,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32dbf6fcda66a7f498fcfa8709d41640, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1506669638 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114024558124957950, guid: 32dbf6fcda66a7f498fcfa8709d41640,
+    type: 2}
+  m_PrefabInternal: {fileID: 1506669637}
+  m_Script: {fileID: 11500000, guid: 9864250ef0cc17347883d8577f1b6f75, type: 3}
 --- !u!1001 &1530834094
 Prefab:
   m_ObjectHideFlags: 0
@@ -6467,6 +6477,11 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -320
       objectReference: {fileID: 0}
+    - target: {fileID: 114027632223402480, guid: c1ea430b77b0b4accbf121a88e0b93f0,
+        type: 2}
+      propertyPath: soundEngine
+      value: 
+      objectReference: {fileID: 1506669638}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1ea430b77b0b4accbf121a88e0b93f0, type: 2}
   m_IsPrefabParent: 0
