@@ -5,10 +5,6 @@ using UnityEngine.Audio;
 
 public class SoundEvent : MonoBehaviour {
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> parent of e2d9e15... basically done ink dialouge. soundevent script fix
 
 public bool loop;
 public bool random;
@@ -50,39 +46,6 @@ private Transform transform;
 
     
 private bool soundPlayed = false;
-<<<<<<< HEAD
-=======
-=======
-	public bool loop;
-	public bool random;
-	public bool playOnAwake;
-	[Range(0.0f, 1.0f)]
-	public float volume;
-	[Range(-12.0f, 12.0f)]
-	public float pitch;
-	[Range(-12.0f, 12.0f)]
-	public float pitchRandomization;
-	public AudioClip[] audioClip;
-	    
-	private int clip = 0;
-	private int randomClip;
-	private float actualPitch;
-	public Transform listener;
-	public bool threeDee;
-	public float threeDeeMultiplier = 1;
-	public float panMultiplier;
-	public float externalVolumeModifier = 1;
-	public float externalPitchModifier = 0;
-	private AudioSource audioSource;
-	    
-	public float playerDistance;
-	public float playerXDistance;
-	public float playerYDistance;
-	private Transform transform;
-	    
-	private bool soundPlayed = false;
->>>>>>> 8db363c249a2caf1a5996154254acfb6e5a0594c
->>>>>>> parent of e2d9e15... basically done ink dialouge. soundevent script fix
     
     
     public void PlaySound ()
@@ -129,19 +92,9 @@ private bool soundPlayed = false;
             Destroy(source, audioClip[clip].length);
             print("Destroyed");
         }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> parent of e2d9e15... basically done ink dialouge. soundevent script fix
         else {
             //sourceList.Add(source);
         }
-<<<<<<< HEAD
-=======
-
-=======
->>>>>>> 8db363c249a2caf1a5996154254acfb6e5a0594c
->>>>>>> parent of e2d9e15... basically done ink dialouge. soundevent script fix
     }
 
     public void StopSound(){
@@ -168,7 +121,6 @@ private bool soundPlayed = false;
         }
     }
     
-<<<<<<< HEAD
     IEnumerator NextClip(){
         float duration = Random.Range(waitTime - (waitRange/2), waitTime + (waitRange/2));
         yield return new WaitForSeconds(duration);
@@ -176,10 +128,6 @@ private bool soundPlayed = false;
     }
 
     void Update()
-=======
-    void Update()
-<<<<<<< HEAD
->>>>>>> parent of e2d9e15... basically done ink dialouge. soundevent script fix
     {
         if (audioSource && loop && !audioSource.isPlaying && soundPlayed){
             StartCoroutine("NextClip");
@@ -209,9 +157,6 @@ private bool soundPlayed = false;
             }
         }
         
-=======
-    {   
->>>>>>> 8db363c249a2caf1a5996154254acfb6e5a0594c
         playerXDistance = transform.position.x - listener.position.x;
         playerYDistance = transform.position.y - listener.position.y;
         if (Mathf.Abs(playerXDistance) >= Mathf.Abs(playerYDistance))

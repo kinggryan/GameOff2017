@@ -2014,6 +2014,7 @@ Tilemap:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &205004429
 Prefab:
   m_ObjectHideFlags: 0
@@ -2181,6 +2182,8 @@ MonoBehaviour:
 >>>>>>> parent of 5f5dad6... Merge branch 'master' of https://github.com/kinggryan/GameOff2017
 =======
 >>>>>>> parent of e2d9e15... basically done ink dialouge. soundevent script fix
+=======
+>>>>>>> parent of 5f5dad6... Merge branch 'master' of https://github.com/kinggryan/GameOff2017
 --- !u!1001 &841897330
 Prefab:
   m_ObjectHideFlags: 0
