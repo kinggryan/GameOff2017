@@ -5,7 +5,6 @@ using UnityEngine.Audio;
 
 public class SoundEvent : MonoBehaviour {
 
-<<<<<<< HEAD
 
 public bool loop;
 public bool random;
@@ -47,45 +46,6 @@ private Transform transform;
 
     
 private bool soundPlayed = false;
-=======
-	public bool loop;
-	public bool random;
-	public bool playOnAwake;
-	[Range(0.0f, 1.0f)]
-	public float volume;
-	[Range(-12.0f, 12.0f)]
-	public float pitch;
-	[Range(-12.0f, 12.0f)]
-	public float pitchRandomization;
-	public float fadeInTime;
-	private float fadeInTimer = 0;
-	private bool fadeIn = false;
-	public float fadeOutTime;
-	public float fadeOutTimer = 1;
-	private bool fadeOut = false;
-
-	public AudioClip[] audioClip;
-	    
-	private int clip = 0;
-	private int randomClip;
-	private float actualPitch;
-	public Transform listener;
-	public bool threeDee;
-	public float threeDeeMultiplier = 1;
-	public float panMultiplier;
-	public float externalVolumeModifier = 1;
-	public float externalPitchModifier = 0;
-	private AudioSource audioSource;
-	    
-	private float playerDistance;
-	private float playerXDistance;
-	private float playerYDistance;
-	private Transform transform;
-
-	private List<AudioSource> sourceList;
-	    
-	private bool soundPlayed = false;
->>>>>>> 8604cec8c3993a0be737adb233c8ec47f8533dcf
     
     
     public void PlaySound ()
@@ -135,10 +95,6 @@ private bool soundPlayed = false;
         else {
             //sourceList.Add(source);
         }
-<<<<<<< HEAD
-
-=======
->>>>>>> 8604cec8c3993a0be737adb233c8ec47f8533dcf
     }
 
     public void StopSound(){
