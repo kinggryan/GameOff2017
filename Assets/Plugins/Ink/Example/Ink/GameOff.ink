@@ -5,7 +5,6 @@ VAR temperment = 0
 VAR wit = 0
 VAR romance = 0
 VAR queer = -1
-VAR dummystat = 0
 VAR titled = false
 VAR name = true
 VAR rando_Camilla = false
@@ -478,48 +477,30 @@ Marchioness of Derby: What does your father do?
      ->order_Essex
 -order(temperment, wit, romance, queer) == wit:
      ->order_Ascot
--order(temperment, wit, romance, queer) == romance:
-->order_Bath
 -else:
-     ->order_rando
+     ->order_Bath
 }
 
 =order_rando
 //Picked Rando
 ~Bachloer_names = rando
--> march
+-> dinner
 
 =order_Essex
 //Picked Essex
 ~Bachloer_names = Essex
- -> march
+ -> dinner
+
 =order_Ascot
 //Picked Ascot
 ~Bachloer_names = Ascot
- -> march
+ -> dinner
+
 =order_Bath
 //Picked Bath
 ~Bachloer_names = Bath
- -> march    
+ -> dinner    
 
-=== march ===
-#changeMusic marchMusic
-#loadScene parlor2 
-
-{
-- Bachloer_names == rando:
-    Walk with Rando
-    ->dinner
-- Bachloer_names == Essex:
-    Walk with Essex
-    ->dinner
-- Bachloer_names == Ascot:
-    Walk with Ascot
-    ->dinner
-- Bachloer_names == Bath:
-    Walk with Bath
-    ->dinner
-}
 === dinner ===
 #changeMusic dinnerMusic
 #loadScene dining
@@ -615,8 +596,6 @@ to your left.
 - Bachloer_names == Bath:   
      ->dinner_Bath
      
-- Bachloer_names == Camilla:
-     ->dinner_Camilla
 }
 
 + {dinner_options < 2} [Talk to someone else]
@@ -734,9 +713,9 @@ Marchiness of Derby: Really? Oh, how exciting! Your secret is safe with me, Cami
  { 
  -order(temperment, wit, romance, queer) == queer:
      ->final_Camilla
- -order(temperment, wit, romance, dummystat) == temperment:
+ -order(temperment, wit, romance, queer) == temperment:
      ->final_Essex
--order(temperment, wit, romance, dummystat) == wit:
+-order(temperment, wit, romance, queer) == wit:
      ->final_Ascot
 -else:
      ->final_Bath
