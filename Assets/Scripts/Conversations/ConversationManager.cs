@@ -78,6 +78,8 @@ public class ConversationManager : MonoBehaviour {
 			LoadNextScene ();
 		}
 
+		PlaySoundsForThisLine ();
+
 		delayTimer += delayDuration;
 	}
 
@@ -184,13 +186,14 @@ public class ConversationManager : MonoBehaviour {
 
 	void PlaySoundsForThisLine() {
 		foreach (var tag in story.GetTags()) {
-			
+			PlaySoundWithTag (tag);
 		}
 	}
 
 	void PlaySoundWithTag(string tag) {
 		if (tag.Contains ("playSound")) {
 			var soundName = tag.Substring ("playSound ".Length);
+			Debug.Log ("Playing sound with name " + soundName);
 			soundEngine.PlaySoundWithName (soundName);
 		}
 	}
