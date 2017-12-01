@@ -4411,16 +4411,21 @@ Prefab:
     - target: {fileID: 224667887447823322, guid: c1ea430b77b0b4accbf121a88e0b93f0,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 352.83664
+      value: 384.83664
       objectReference: {fileID: 0}
     - target: {fileID: 224667887447823322, guid: c1ea430b77b0b4accbf121a88e0b93f0,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 294.5696
+      value: 358.5696
       objectReference: {fileID: 0}
     - target: {fileID: 1759353584069512, guid: c1ea430b77b0b4accbf121a88e0b93f0, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114100454871427870, guid: c1ea430b77b0b4accbf121a88e0b93f0,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1ea430b77b0b4accbf121a88e0b93f0, type: 2}
