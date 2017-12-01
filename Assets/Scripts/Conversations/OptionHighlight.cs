@@ -6,7 +6,7 @@ using UnityEngine;
 public class OptionHighlight : MonoBehaviour {
 
 	UnityEngine.UI.Text text;
-	Color highlightColor = Color.white;
+	public Color highlightColor;
 	Color unhighlightColor = Color.black;
 	bool highlight;
 

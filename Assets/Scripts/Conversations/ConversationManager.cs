@@ -10,6 +10,7 @@ public class ConversationManager : MonoBehaviour {
 	public GameObject conversationUIParent;
 	public ConversationUIManager uiManager;
 	public SoundEngine soundEngine;
+	public MusicEngine musicEngine;
 
 	private ScriptWrapper story;
 	private bool inConversation = false;
@@ -193,6 +194,7 @@ public class ConversationManager : MonoBehaviour {
 	void PlaySoundsForThisLine() {
 		foreach (var tag in story.GetTags()) {
 			PlaySoundWithTag (tag);
+			ChangeMusicWithTag (tag);
 		}
 	}
 
@@ -202,5 +204,19 @@ public class ConversationManager : MonoBehaviour {
 			Debug.Log ("Playing sound with name " + soundName);
 			soundEngine.PlaySoundWithName (soundName);
 		}
+	}
+
+	void ChangeMusicWithTag(string tag) {
+		if (tag.Contains ("changeMusic")) {
+			var soundName = tag.Substring ("changeMusic ".Length);
+			Debug.Log ("Changing music with name " + soundName);
+			musicEngine = GameObject.Find("MusicEngine").GetComponent<MusicEngine>();
+			musicEngine.ChangeMusicWithName (soundName);
+		}
+	}
+
+	void OnLevelWasLoaded(int level){
+		musicEngine = GameObject.Find("MusicEngine").GetComponent<MusicEngine>();
+		soundEngine = GameObject.Find("SoundEngine").GetComponent<SoundEngine>();
 	}
 }
