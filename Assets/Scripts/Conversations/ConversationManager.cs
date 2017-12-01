@@ -216,6 +216,7 @@ public class ConversationManager : MonoBehaviour {
 	}
 
 	void OnLevelWasLoaded(int level){
-		//musicEngine = GameObject.Find("MusicEngine").GetComponent<MusicEngine>();
+		musicEngine = GameObject.Find("MusicEngine").GetComponent<MusicEngine>();
+		soundEngine = GameObject.Find("SoundEngine").GetComponent<SoundEngine>();
 	}
 }

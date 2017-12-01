@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 4870186148057470}
   - component: {fileID: 114430238080167086}
   m_Layer: 0
-  m_Name: essexPositive
+  m_Name: select
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,6 +203,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1728043907073982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4063796712072754}
+  - component: {fileID: 114405309789104186}
+  m_Layer: 0
+  m_Name: harpStinger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1733172133235564
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,6 +262,22 @@ GameObject:
   - component: {fileID: 114234783914553926}
   m_Layer: 0
   m_Name: amyNegative
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1786484475949532
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4780034039309366}
+  - component: {fileID: 114296841781696640}
+  m_Layer: 0
+  m_Name: essexPositive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -295,6 +327,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4858358508469584}
   m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4063796712072754
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1728043907073982}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4858358508469584}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4155492515336908
 Transform:
@@ -439,6 +484,19 @@ Transform:
   m_Father: {fileID: 4858358508469584}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4780034039309366
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1786484475949532}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4858358508469584}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4789443964565284
 Transform:
   m_ObjectHideFlags: 1
@@ -490,6 +548,8 @@ Transform:
   - {fileID: 4027854187054874}
   - {fileID: 4614021970067604}
   - {fileID: 4608941404126838}
+  - {fileID: 4780034039309366}
+  - {fileID: 4063796712072754}
   - {fileID: 4870186148057470}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -505,7 +565,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4858358508469584}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4925333342928216
 Transform:
@@ -533,6 +593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loop: 0
   random: 1
+  sequence: 0
   playOnAwake: 0
   volume: 1
   pitch: 0
@@ -552,6 +613,7 @@ MonoBehaviour:
   externalVolumeModifier: 1
   externalPitchModifier: 0
   output: {fileID: 243960766616084242, guid: 5d8468aeda94c7e46892ee1dff486895, type: 2}
+  elementToLoop: 0
 --- !u!114 &114024558124957950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -595,6 +657,10 @@ MonoBehaviour:
   - name: essexNegative
     soundEvent: {fileID: 114542954602958706}
   - name: essexPositive
+    soundEvent: {fileID: 114296841781696640}
+  - name: harpStinger
+    soundEvent: {fileID: 114405309789104186}
+  - name: select
     soundEvent: {fileID: 114430238080167086}
 --- !u!114 &114034445864331352
 MonoBehaviour:
@@ -609,6 +675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loop: 0
   random: 1
+  sequence: 0
   playOnAwake: 0
   volume: 1
   pitch: 0
@@ -635,6 +702,7 @@ MonoBehaviour:
   externalVolumeModifier: 1
   externalPitchModifier: 0
   output: {fileID: 243960766616084242, guid: 5d8468aeda94c7e46892ee1dff486895, type: 2}
+  elementToLoop: 0
 --- !u!114 &114159105757460400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -648,6 +716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loop: 0
   random: 1
+  sequence: 0
   playOnAwake: 0
   volume: 1
   pitch: 0
@@ -668,6 +737,7 @@ MonoBehaviour:
   externalVolumeModifier: 1
   externalPitchModifier: 0
   output: {fileID: 243960766616084242, guid: 5d8468aeda94c7e46892ee1dff486895, type: 2}
+  elementToLoop: 0
 --- !u!114 &114234783914553926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -681,6 +751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loop: 0
   random: 1
+  sequence: 0
   playOnAwake: 0
   volume: 1
   pitch: 0
@@ -706,6 +777,7 @@ MonoBehaviour:
   externalVolumeModifier: 1
   externalPitchModifier: 0
   output: {fileID: 243960766616084242, guid: 5d8468aeda94c7e46892ee1dff486895, type: 2}
+  elementToLoop: 0
 --- !u!114 &114237585096990978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -719,6 +791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loop: 0
   random: 1
+  sequence: 0
   playOnAwake: 0
   volume: 1
   pitch: 0
@@ -740,6 +813,7 @@ MonoBehaviour:
   externalVolumeModifier: 1
   externalPitchModifier: 0
   output: {fileID: 243960766616084242, guid: 5d8468aeda94c7e46892ee1dff486895, type: 2}
+  elementToLoop: 0
 --- !u!114 &114283433609507002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -753,6 +827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loop: 0
   random: 1
+  sequence: 0
   playOnAwake: 0
   volume: 1
   pitch: 0
@@ -772,6 +847,42 @@ MonoBehaviour:
   externalVolumeModifier: 1
   externalPitchModifier: 0
   output: {fileID: 243960766616084242, guid: 5d8468aeda94c7e46892ee1dff486895, type: 2}
+  elementToLoop: 0
+--- !u!114 &114296841781696640
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1786484475949532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86dd0732abf60614ba9e025e4a569742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loop: 0
+  random: 1
+  sequence: 0
+  playOnAwake: 0
+  volume: 1
+  pitch: 0
+  pitchRandomization: 0
+  fadeInTime: 0
+  fadeOutTime: 0
+  fadeOutTimer: 1
+  audioClip:
+  - {fileID: 8300000, guid: a97d0a73e8b296d4c964db1f653f0c9e, type: 3}
+  - {fileID: 8300000, guid: 1a9cb824e5bdeae4fb19a48c1b47dcc8, type: 3}
+  - {fileID: 8300000, guid: ec1a2420eb4bf8049b7b4cd39b21009d, type: 3}
+  waitTime: 0
+  waitRange: 0
+  listener: {fileID: 0}
+  threeDee: 0
+  threeDeeMultiplier: 1
+  panMultiplier: 0
+  externalVolumeModifier: 1
+  externalPitchModifier: 0
+  output: {fileID: 243960766616084242, guid: 5d8468aeda94c7e46892ee1dff486895, type: 2}
+  elementToLoop: 0
 --- !u!114 &114323493358222272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -785,6 +896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loop: 0
   random: 1
+  sequence: 0
   playOnAwake: 0
   volume: 1
   pitch: 0
@@ -793,11 +905,8 @@ MonoBehaviour:
   fadeOutTime: 0
   fadeOutTimer: 1
   audioClip:
-  - {fileID: 8300000, guid: bfff7136e0da83146a8508fd35b5cd7f, type: 3}
-  - {fileID: 8300000, guid: 0ce642f3bb92ed446b0d9fb5b9fbe37b, type: 3}
+  - {fileID: 8300000, guid: 408c82a70007ba241b2d9e82a68fd4f0, type: 3}
   - {fileID: 8300000, guid: 7556ae69a9dd7684eacce4ca263996cf, type: 3}
-  - {fileID: 8300000, guid: 7556ae69a9dd7684eacce4ca263996cf, type: 3}
-  - {fileID: 8300000, guid: ddbc37db16a3c414eabc97c43ab8fde2, type: 3}
   - {fileID: 8300000, guid: d019f35bfa6a36f4793a9e4eae0a883f, type: 3}
   waitTime: 0
   waitRange: 0
@@ -808,6 +917,7 @@ MonoBehaviour:
   externalVolumeModifier: 1
   externalPitchModifier: 0
   output: {fileID: 243960766616084242, guid: 5d8468aeda94c7e46892ee1dff486895, type: 2}
+  elementToLoop: 0
 --- !u!114 &114387095132027424
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -821,6 +931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loop: 0
   random: 1
+  sequence: 0
   playOnAwake: 0
   volume: 1
   pitch: 0
@@ -842,6 +953,42 @@ MonoBehaviour:
   externalVolumeModifier: 1
   externalPitchModifier: 0
   output: {fileID: 243960766616084242, guid: 5d8468aeda94c7e46892ee1dff486895, type: 2}
+  elementToLoop: 0
+--- !u!114 &114405309789104186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1728043907073982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86dd0732abf60614ba9e025e4a569742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loop: 0
+  random: 1
+  sequence: 0
+  playOnAwake: 0
+  volume: 1
+  pitch: 0
+  pitchRandomization: 0
+  fadeInTime: 0
+  fadeOutTime: 0
+  fadeOutTimer: 1
+  audioClip:
+  - {fileID: 8300000, guid: 7bbfc3feb9e63244e964ce3476536e6d, type: 3}
+  - {fileID: 8300000, guid: b48d78a674d12654eae8040b65ce3b85, type: 3}
+  - {fileID: 8300000, guid: b46a50bc4b9f9864db4d2cf58d1ae076, type: 3}
+  waitTime: 0
+  waitRange: 0
+  listener: {fileID: 0}
+  threeDee: 0
+  threeDeeMultiplier: 1
+  panMultiplier: 0
+  externalVolumeModifier: 1
+  externalPitchModifier: 0
+  output: {fileID: 243960766616084242, guid: 5d8468aeda94c7e46892ee1dff486895, type: 2}
+  elementToLoop: 0
 --- !u!114 &114430238080167086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -854,18 +1001,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loop: 0
-  random: 1
+  random: 0
+  sequence: 0
   playOnAwake: 0
-  volume: 1
+  volume: 0.55
   pitch: 0
   pitchRandomization: 0
   fadeInTime: 0
   fadeOutTime: 0
   fadeOutTimer: 1
   audioClip:
-  - {fileID: 8300000, guid: a97d0a73e8b296d4c964db1f653f0c9e, type: 3}
-  - {fileID: 8300000, guid: 1a9cb824e5bdeae4fb19a48c1b47dcc8, type: 3}
-  - {fileID: 8300000, guid: ec1a2420eb4bf8049b7b4cd39b21009d, type: 3}
+  - {fileID: 8300000, guid: b06e097fb1d72b54e84d8d3614042b56, type: 3}
   waitTime: 0
   waitRange: 0
   listener: {fileID: 0}
@@ -874,7 +1020,8 @@ MonoBehaviour:
   panMultiplier: 0
   externalVolumeModifier: 1
   externalPitchModifier: 0
-  output: {fileID: 243960766616084242, guid: 5d8468aeda94c7e46892ee1dff486895, type: 2}
+  output: {fileID: 24300002, guid: 5d8468aeda94c7e46892ee1dff486895, type: 2}
+  elementToLoop: 0
 --- !u!114 &114542954602958706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -888,6 +1035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loop: 0
   random: 1
+  sequence: 0
   playOnAwake: 0
   volume: 1
   pitch: 0
@@ -908,6 +1056,7 @@ MonoBehaviour:
   externalVolumeModifier: 1
   externalPitchModifier: 0
   output: {fileID: 243960766616084242, guid: 5d8468aeda94c7e46892ee1dff486895, type: 2}
+  elementToLoop: 0
 --- !u!114 &114584479740269866
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -921,6 +1070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loop: 0
   random: 1
+  sequence: 0
   playOnAwake: 0
   volume: 1
   pitch: 0
@@ -943,6 +1093,7 @@ MonoBehaviour:
   externalVolumeModifier: 1
   externalPitchModifier: 0
   output: {fileID: 243960766616084242, guid: 5d8468aeda94c7e46892ee1dff486895, type: 2}
+  elementToLoop: 0
 --- !u!114 &114749457221196202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -956,6 +1107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loop: 0
   random: 1
+  sequence: 0
   playOnAwake: 0
   volume: 1
   pitch: 0
@@ -976,6 +1128,7 @@ MonoBehaviour:
   externalVolumeModifier: 1
   externalPitchModifier: 0
   output: {fileID: 243960766616084242, guid: 5d8468aeda94c7e46892ee1dff486895, type: 2}
+  elementToLoop: 0
 --- !u!114 &114797192021204296
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -989,6 +1142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loop: 0
   random: 1
+  sequence: 0
   playOnAwake: 0
   volume: 1
   pitch: 0
@@ -1009,6 +1163,7 @@ MonoBehaviour:
   externalVolumeModifier: 1
   externalPitchModifier: 0
   output: {fileID: 243960766616084242, guid: 5d8468aeda94c7e46892ee1dff486895, type: 2}
+  elementToLoop: 0
 --- !u!114 &114811182922892752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1022,6 +1177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loop: 0
   random: 1
+  sequence: 0
   playOnAwake: 0
   volume: 1
   pitch: 0
@@ -1042,6 +1198,7 @@ MonoBehaviour:
   externalVolumeModifier: 1
   externalPitchModifier: 0
   output: {fileID: 243960766616084242, guid: 5d8468aeda94c7e46892ee1dff486895, type: 2}
+  elementToLoop: 0
 --- !u!114 &114945741883327606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1055,6 +1212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loop: 0
   random: 1
+  sequence: 0
   playOnAwake: 0
   volume: 1
   pitch: 0
@@ -1075,6 +1233,7 @@ MonoBehaviour:
   externalVolumeModifier: 1
   externalPitchModifier: 0
   output: {fileID: 243960766616084242, guid: 5d8468aeda94c7e46892ee1dff486895, type: 2}
+  elementToLoop: 0
 --- !u!114 &114985082218725148
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1088,6 +1247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loop: 0
   random: 1
+  sequence: 0
   playOnAwake: 0
   volume: 1
   pitch: 0
@@ -1110,3 +1270,4 @@ MonoBehaviour:
   externalVolumeModifier: 1
   externalPitchModifier: 0
   output: {fileID: 243960766616084242, guid: 5d8468aeda94c7e46892ee1dff486895, type: 2}
+  elementToLoop: 0
