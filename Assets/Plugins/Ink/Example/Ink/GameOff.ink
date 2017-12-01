@@ -90,22 +90,18 @@ VAR bigger2 = 0
  {titles} {full_name()}: And were overjoyed that some guardian had placed you in good hands. {increase_stat(queer)} 
 
 -(excite) {titles} {full_name()}: With anxious exitcement, you stare expecetedly at Rose House, wondering what the evening holds for you.   
-
 -> arrived_At_Rose_House 
 
 === arrived_At_Rose_House ===
 -(outside)
 
-{time_waited < 4} {titles} {full_name()}: {{decrease_stat(temperment)} You arrive at the townhouse | After occupying ourself for a short while, you arrived |Surely, you figure, it is time to enter | If fifteen minutes is fashionably late, then I must be excelling in style at}{five minutes before the hour.|at Rose House again at exactly five o'clock. | fifteen minutes past the hour. | thirty minutes past the hour. | fourty-five past the hour}
+{time_waited < 4} {titles} {full_name()}: { You arrive at the townhouse | After occupying ourself for a short while, you arrived |Surely, you figure, it is time to enter | If fifteen minutes is fashionably late, then I must be excelling in style at}{five minutes before the hour.|at Rose House again at exactly five o'clock. | fifteen minutes past the hour. | thirty minutes past the hour. | fourty-five past the hour}
 
     * [You enter Rose House]
-     
-    
-   //Temperment is now {temperment} //Test for stat_increase(). Will remove in game
-    ->introductions
+        ->introductions
  
      + (wait) {time_waited < 3} [Wait] 
-    {titles} {full_name()}: You wait {and take a stroll around the block. A street barker shouts the news of the day and you intently listen. |{increase_stat(temperment)} {increase_stat(temperment)} and hoped to find something of interest on the street. You glance at your heels, wishing you had a more comfortable option.| {decrease_stat(temperment)} {decrease_stat(temperment)}, and feel as if you will truly make quite an entrance. } #gameEvent walkAway
+    {titles} {full_name()}: You wait {and take a stroll around the block. A street barker shouts the news of the day and you intently listen. | {increase_stat(temperment)} and hoped to find something of interest on the street. You glance at your heels, wishing you had a more comfortable option.|  {decrease_stat(temperment)}, and feel as if you will truly make quite an entrance. } #gameEvent walkAway
     {waited()}
     ->outside
 
@@ -124,8 +120,7 @@ Marchioness of Derby: You are?
 *[You give your Christian name]
 {titles} {full_name()}: The Marchioness lets out a small scoff in return.
 Marchioness of Derby: Well, I could never imagine a commoner would grace the halls of Rose House, but I suppose you were invited. An oversight on someone's part, surely. #playSound amyNegative
-Marchioness of Derby: Regardless, please let me show you the other guests. They are quite distinguished, unlike youself.
-{increase_stat(queer)}
+Marchioness of Derby: Regardless, please let me show you the other guests. They are quite distinguished, unlike youself.{increase_stat(queer)}
 -> time
 
 *[You give a title (lie)]
@@ -164,9 +159,8 @@ Marchioness of Derby: Regardless, please let me show you the other guests. They 
     ->bachelor_And_Camilla_Intro
 
 =introduce_self
-{titles} {full_name()}: Or at least you start to, but before you can finish the Marchioness interupts. 
+  {decrease_stat(temperment)} {titles} {full_name()}: Or at least you start to, but before you can finish the Marchioness interupts. 
  Marchioness of Derby: No, no my dear. You must know the gentleman always introduce themselves first. #playSound amyNegative
-  {decrease_stat(temperment)}
   ->bachelor_And_Camilla_Intro
   
 =bachelor_And_Camilla_Intro
@@ -215,7 +209,7 @@ Lord Bath: The gentry label me as Lord Bath, but you may call me as you please.
 {titles} {full_name()}: You walk over to Lady Camilla
 ->chat_Camilla
 
-* ->march_Order 
+*->march_Order 
 
 =chat_Essex
 
@@ -223,8 +217,7 @@ Lord Bath: The gentry label me as Lord Bath, but you may call me as you please.
 {titles} {full_name()}:
 *[Lord Essex]
 {titled == false:
-{increase_stat(temperment)}
-{NPC_full_name(Essex, Essex_title)}: I am pleased you respect my stature. Too many place familiarity above formality these days. #playSound essexPositive
+{increase_stat(temperment)}{NPC_full_name(Essex, Essex_title)}: I am pleased you respect my stature. Too many place familiarity above formality these days. #playSound essexPositive
 
 -else:
 {NPC_full_name(Essex, Essex_title)}: You do me the honor of such an adresss but no doubt there is no need to demean yourself. #playSound essexNegative
@@ -232,35 +225,27 @@ Lord Bath: The gentry label me as Lord Bath, but you may call me as you please.
 
 *[Earl Essex]
 ~Essex_title = Earl
-{decrease_stat(temperment)}
-{NPC_full_name(Essex, Essex_title)}: Did you just address me -- aha, I get it. You must be joking with such needless formality. Yes yes, very clever. #playSound essexNegative
+{decrease_stat(temperment)}{NPC_full_name(Essex, Essex_title)}: Did you just address me -- aha, I get it. You must be joking with such needless formality. Yes yes, very clever. #playSound essexNegative
 *[Essex]
 ~Essex_title = Dummy1
-{titled == true:
-{increase_stat(temperment)}
-{increase_stat(temperment)}
-{NPC_full_name(Essex, Essex_title)}: Why, such forthrightness is rare these days. I am impressed with your command of your superior station. #playSound essexPositive
+{titled == true: 
+{increase_stat(temperment)} {increase_stat(temperment)}{NPC_full_name(Essex, Essex_title)}: Why, such forthrightness is rare these days. I am impressed with your command of your superior station. #playSound essexPositive
 -else:
-{decrease_stat(temperment)}
-{NPC_full_name(Essex, Essex_title)}: Why, I never have been so insulted by one so common. #playSound essexNegative
+{decrease_stat(temperment)}{NPC_full_name(Essex, Essex_title)}: Why, I never have been so insulted by one so common. #playSound essexNegative
 }
-
 -->talk_Essex
 
 -(talk_Essex)
 {NPC_full_name(Essex, Essex_title)}: Did you come over to chat with me?
 {titles} {full_name()}:
     * [Talk about politics]
-    {decrease_stat(temperment)}
-   {NPC_full_name(Essex, Essex_title)}: Now now, no need to steer polite conversation into such clefted water. It wouldn't be prudent. #playSound essexNegative
+    {decrease_stat(temperment)}{NPC_full_name(Essex, Essex_title)}: Now now, no need to steer polite conversation into such clefted water. It wouldn't be prudent. #playSound essexNegative
     
     * [Talk about the weather]
-    {increase_stat(temperment)}
-    {NPC_full_name(Essex, Essex_title)}: Yes, a most pleasant topic. This long bout of overcast weather we've been having has suited me well this Spring. #playSound essexPositive
+    {increase_stat(temperment)}{NPC_full_name(Essex, Essex_title)}: Yes, a most pleasant topic. This long bout of overcast weather we've been having has suited me well this Spring. #playSound essexPositive
     
     * [Talk about the stock market]
-    {decrease_stat(temperment)} {decrease_stat(temperment)}
-    {NPC_full_name(Essex, Essex_title)}: I say! You should know a gentleman only speaks of financial affairs with his closest confidants and his wife. #playSound essexNegative 
+    {decrease_stat(temperment)} {decrease_stat(temperment)}{NPC_full_name(Essex, Essex_title)}: I say! You should know a gentleman only speaks of financial affairs with his closest confidants and his wife. #playSound essexNegative 
     {NPC_full_name(Essex, Essex_title)}: Do you already presume to be as such? Harumph! 
 -->talk_options
 
@@ -268,46 +253,35 @@ Lord Bath: The gentry label me as Lord Bath, but you may call me as you please.
 {titles} {full_name()}: How do you address Lord Ascot?
 
 *[Lord Ascot]
-{decrease_stat(wit)}
-{NPC_full_name(Ascot, Ascot_title)}: No need for such formality. If I wanted to talk to a marm I would dine at a schoolhouse. Totemo vulgar.#playSound ascotNegative
+{decrease_stat(wit)}{NPC_full_name(Ascot, Ascot_title)}: No need for such formality. If I wanted to talk to a marm I would dine at a schoolhouse. Totemo vulgar.#playSound ascotNegative
 
 *[Viscount Ascot]
 ~Ascot_title = Viscount
-{increase_stat(wit)}
-{increase_stat(wit)}
-{NPC_full_name(Ascot, Ascot_title)}: Omoshiroi! What a fabulous witticism. I sense a strong sense of irony in you. #playSound ascotPositive
+{increase_stat(wit)}{increase_stat(wit)}{NPC_full_name(Ascot, Ascot_title)}: Omoshiroi! What a fabulous witticism. I sense a strong sense of irony in you. #playSound ascotPositive
 
 *[Ascot]
 ~Ascot_title = Dummy2
-{increase_stat(wit)}
-{NPC_full_name(Ascot, Ascot_title)}: Sugoi! Not everyone gets the line, but you caught on quick. I have quite the collection as you may have guessed. #playSound ascotPositive
-
+{increase_stat(wit)}{NPC_full_name(Ascot, Ascot_title)}: Sugoi! Not everyone gets the line, but you caught on quick. I have quite the collection as you may have guessed. #playSound ascotPositive
 -->talk_Ascot
 
 -(talk_Ascot)
 {NPC_full_name(Ascot, Ascot_title)}: Well, my good miss, what do you like to do for leisure?
 {titles} {full_name()}:
     * [Fox hunting]
-        {decrease_stat(wit)}
-        {NPC_full_name(Ascot, Ascot_title)}: Ugh. I understand being prodigal, but spending all that money just to shoot an innocent creature? Poor little kitsunes. #playSound ascotNegative
+        {decrease_stat(wit)}{NPC_full_name(Ascot, Ascot_title)}: Ugh. I understand being prodigal, but spending all that money just to shoot an innocent creature? Poor little kitsunes. #playSound ascotNegative
         
     * [Go to the horse races]
-        {decrease_stat(wit)}
-       {NPC_full_name(Ascot, Ascot_title)}: A common enough interest, if a little dull for my tastes. At least the horses all have colorful names, I suppose. #playSound ascotNegative
+        {decrease_stat(wit)}{NPC_full_name(Ascot, Ascot_title)}: A common enough interest, if a little dull for my tastes. At least the horses all have colorful names, I suppose. #playSound ascotNegative
         
     * [Read the latest issue of Punch]
-        {increase_stat(wit)}
-       {NPC_full_name(Ascot, Ascot_title)}: A sense of humor? Subarashi! My peers say Punch is a middle-class rag, but they wouldn't know satire if it yanked their tailcoats. #playSound ascotPositive
-
+        {increase_stat(wit)}{NPC_full_name(Ascot, Ascot_title)}: A sense of humor? Subarashi! My peers say Punch is a middle-class rag, but they wouldn't know satire if it yanked their tailcoats. #playSound ascotPositive
 -->talk_options
 
 =chat_Bath
-{titles} {full_name()}:How do you address Lord Bath?
-{introductions.introduce_self: {increase_stat(romance)}}
+{titles} {full_name()}:How do you address Lord Bath? {introductions.introduce_self: {increase_stat(romance)}}
 {titles} {full_name()}:
 *[Lord Bath]
-{decrease_stat(romance)}
-{NPC_full_name(Bath, Bath_title)}: Dearest, my love, I scoff at wealth. As my friend William says #playSound bathNegative
+{decrease_stat(romance)}{NPC_full_name(Bath, Bath_title)}: Dearest, my love, I scoff at wealth. As my friend William says #playSound bathNegative
 
 {NPC_full_name(Bath, Bath_title)}: "Is this a holy thing to see
 {NPC_full_name(Bath, Bath_title)}: In a rich and fruitful land,
@@ -317,20 +291,14 @@ Lord Bath: The gentry label me as Lord Bath, but you may call me as you please.
 
 *[Marquess Bath]
 ~Bath_title = Marquess
-{decrease_stat(romance)}
-{NPC_full_name(Bath, Bath_title)}: Although my dearest friend, Byron, has said 
+{decrease_stat(romance)}{NPC_full_name(Bath, Bath_title)}: Although my dearest friend, Byron, has said 
 {NPC_full_name(Bath, Bath_title)}: "Money, that most pure imagination, gleams only through the dawn of its creation." #playSound bathNegative
 {NPC_full_name(Bath, Bath_title)}: Do not mistake me for a patrician. I shirk such titles. 
 
 *[Bath]
 ~Bath_title = Dummy3
-{increase_stat(romance)}
-{increase_stat(romance)}
-{increase_stat(romance)}
-{NPC_full_name(Bath, Bath_title)}: Ah, so informal already? No matter, I welcome the intimacy. #playSound bathPositive
+{increase_stat(romance)}{increase_stat(romance)}{NPC_full_name(Bath, Bath_title)}: Ah, so informal already? No matter, I welcome the intimacy. #playSound bathPositive
 {NPC_full_name(Bath, Bath_title)}: My friend William once wrote of seeing Heaven in a wild flower, but I can only imagine what he would have seen in one as comely as you.
-
-
 -->talk_Bath
 
 -(talk_Bath)
@@ -338,23 +306,17 @@ Lord Bath: The gentry label me as Lord Bath, but you may call me as you please.
 
 {titles} {full_name()}:
 *[A big wedding in a fashionable church]
-{decrease_stat(romance)}
-{NPC_full_name(Bath, Bath_title)}: Oh, really? That's... conventional. #playSound bathNegative
+{decrease_stat(romance)}{NPC_full_name(Bath, Bath_title)}: Oh, really? That's... conventional. #playSound bathNegative
 
 *[Elope to Scotland and get married]
-{increase_stat(romance)}
-{NPC_full_name(Bath, Bath_title)}: A scandalous streak in you, eh? You know, many of my friends have eloped to Gretna Green. They say the blacksmith acts as witness. #playSound bathPositive
+{increase_stat(romance)}{NPC_full_name(Bath, Bath_title)}: A scandalous streak in you, eh? You know, many of my friends have eloped to Gretna Green. They say the blacksmith acts as witness. #playSound bathPositive
 
 *[A small ceremony at home]
-{decrease_stat(romance)}
-{NPC_full_name(Bath, Bath_title)}: I suppose your preference in romance is more Dickens and less Dante. #playSound bathNegative
-
+{decrease_stat(romance)}{NPC_full_name(Bath, Bath_title)}: I suppose your preference in romance is more Dickens and less Dante. #playSound bathNegative
 -->talk_options
 
 =chat_Camilla
-{titles} {full_name()}:How do you address Lady Camilla?
-{titled == true: {decrease_stat(queer)}{decrease_stat(queer)}}
-{introductions.introduce_self: {increase_stat(queer)}}
+{titles} {full_name()}:How do you address Lady Camilla? {titled == true: {decrease_stat(queer)}{decrease_stat(queer)}} {introductions.introduce_self: {increase_stat(queer)}}
 
 {titles} {full_name()}:
 *[Lady Camilla]
@@ -366,9 +328,7 @@ Lord Bath: The gentry label me as Lord Bath, but you may call me as you please.
 
 *[Camilla]
 ~Camilla_title = Dummy4
-{increase_stat(queer)}
-{increase_stat(queer)}
-{NPC_full_name(Camilla, Camilla_title)}: Remember who you speak to, Miss Leigh. Even commoners must observe basic decorum. #playSound camillaNegative
+{increase_stat(queer)}{increase_stat(queer)}{NPC_full_name(Camilla, Camilla_title)}: Remember who you speak to, Miss Leigh. Even commoners must observe basic decorum. #playSound camillaNegative
 
 -->talk_Camiila
 
@@ -383,16 +343,11 @@ Lord Bath: The gentry label me as Lord Bath, but you may call me as you please.
 {titles} {full_name()}: {NPC_full_name(Camilla, Camilla_title)} is looking at you eagerly for a response.
 {titles} {full_name()}:
     *[You look enchanting tonight.]
-    {increase_stat(queer)}
-     {NPC_full_name(Camilla, Camilla_title)}: *Camilla blushes* #playSound camillaPositive
+    {increase_stat(queer)}{NPC_full_name(Camilla, Camilla_title)}: *Camilla blushes* #playSound camillaPositive
     
-    * [What a marvelous dress you’re wearing, it really slims your figure.]
-       #playSound camillaNegative
-    
+    *[What a marvelous dress you’re wearing, it really slims your figure.]
     *[You want a punch in the sauce-box, church-bell?]
-       #playSound camillaNegative
-    
-   --> camilla_reveal 
+  --> camilla_reveal 
    
 -(camilla_reveal) 
 {titles} {full_name()}: In a low voice {NPC_full_name(Camilla, Camilla_title)} whispers...
@@ -412,63 +367,45 @@ Marchioness of Derby: What does your father do?
   {titles} {full_name()}:
   
   *[Solicitor]
-   Marchioness of Derby: Hmm, I see. #playSound amyNegative
-  {increase_stat(romance)}
-  {increase_stat(queer)}
-    
+   {increase_stat(romance)} {increase_stat(queer)}Marchioness of Derby: Hmm, I see. #playSound amyNegative 
+   
   *[Squire]
-   Marchioness of Derby: He must be a respectable man. #playSound amyPositive
-  {increase_stat(temperment)}
-
-  
+    {increase_stat(temperment)} Marchioness of Derby: He must be a respectable man. #playSound amyPositive
+    
   *[Doctor]
-   Marchioness of Derby: Ah, excellent. #playSound amyPositive
-  {increase_stat(wit)}
+   {increase_stat(wit)}Marchioness of Derby: Ah, excellent. #playSound amyPositive
  
   -  Marchioness of Derby: Where does your family holiday?
  
   {titles} {full_name()}:
   *[Cairo] 
-  Marchioness of Derby: Oh, quite exotic. #playSound amyPositive
-  {increase_stat(wit)}
-
+ {increase_stat(wit)} Marchioness of Derby: Oh, quite exotic. #playSound amyPositive
   
   *[Nice]
-  Marchioness of Derby: Really? You know, I’ve heard the Queen visits Nice often. #playSound amyPositive
-  {increase_stat(temperment)}
-
-  
+   {increase_stat(temperment)} Marchioness of Derby: Really? You know, I’ve heard the Queen visits Nice often. #playSound amyPositive
+ 
   *[Brighton]
-  Marchioness of Derby: The seaside? How quaint… #playSound amyNegative
-  {increase_stat(queer)}
-
-  
+   {increase_stat(queer)} Marchioness of Derby: The seaside? How quaint… #playSound amyNegative
+ 
   - Marchioness of Derby: What time do you eat dinner?
   
   {titles} {full_name()}:
   *[Eight p.m.]
-  Marchioness of Derby: How fashionable of you! #playSound amyPositive
-  {increase_stat(temperment)}
- 
-  
+    {increase_stat(temperment)} Marchioness of Derby: How fashionable of you! #playSound amyPositive
+    
   *[Six p.m.] 
-  Marchioness of Derby: Like a proper young lady should. #playSound amyPositive
-  {increase_stat(wit)}
+  {increase_stat(wit)} Marchioness of Derby: Like a proper young lady should. #playSound amyPositive
+  
   
   *[Noon]
-   Marchioness of Derby: Oh, dear. An unfortunate family tradition, I hope. #playSound amyNegative
-  {increase_stat(romance)} 
-  {increase_stat(queer)}
-  
+     {increase_stat(romance)}{increase_stat(queer)}Marchioness of Derby: Oh, dear. An unfortunate family tradition, I hope. #playSound amyNegative
   --> pick_order 
-
 =pick_order
 //for testing
- Camila: {queer}
+ {NPC_full_name(Camilla, Camilla_title)}: {queer}
  Essex: {temperment}
  Ascot: {wit}
  Bath: {romance}
- 
  {
  -order(temperment, wit, romance, queer) == queer:
      ~rando_Camilla = true
@@ -480,7 +417,6 @@ Marchioness of Derby: What does your father do?
 -else:
      ->order_Bath
 }
-
 =order_rando
 //Picked Rando
 ~Bachloer_names = rando
@@ -515,90 +451,62 @@ to your left.
 ->table_manners
 
 =table_manners
-  {titles} {full_name()}:A footman places a shallow bowl of pea soup in front of you. Do you..
+  {titles} {full_name()}:A footman places a shallow bowl of pea soup in front of you. Do you...
     {titles} {full_name()}:
 	* [Dip your bread in it] 
-	  {increase_stat(wit)}
-	  {decrease_stat(temperment)}
-	    {titles} {full_name()}:  You receive narrowed eyes and throat clearings from the diners around you, except for the {NPC_full_name(Ascot, Ascot_title)}. 
+	  {increase_stat(wit)}{decrease_stat(temperment)}{titles} {full_name()}:  You receive narrowed eyes and throat clearings from the diners around you, except for Lord Ascot. 
 	   {titles} {full_name()}: When he sees you dip your bread into the pea soup, he chuckles, then mimes doing it himself. #playSound ascotPositive
 	    
 	* [Eat it with a spoon, sipping from the side ]
-	  {increase_stat(temperment)}
-	  {decrease_stat(queer)}
-	     {titles} {full_name()}: You look around the table, and see everyone else eating in the same manner. #playSound essexPositive
+	  {increase_stat(temperment)}{decrease_stat(queer)}{titles} {full_name()}: You look around the table, and see everyone else eating in the same manner. #playSound essexPositive
 	   
 	* [Eat it with a spoon, blowing on it and sipping from the tip]
-      {decrease_stat(temperment)}
-      {decrease_stat(wit)}
-      {increase_stat(queer)}
-      {titles} {full_name()}: {NPC_full_name(Camilla, Camilla_title)} looks your way and titters to herself over your mistake. #playSound camillaNegative
+      {decrease_stat(temperment)}{decrease_stat(wit)}{increase_stat(queer)}{titles} {full_name()}: {NPC_full_name(Camilla, Camilla_title)} looks your way and titters to herself over your mistake. #playSound camillaNegative
    -->trout
     
--(trout)  {titles} {full_name()}: The footman takes the bowl of pea soup away, and replaces it with a steaming plate of trout. You eat it with...
+-(trout)  
+{titles} {full_name()}: The footman takes the bowl of pea soup away, and replaces it with a steaming plate of trout. You eat it with...
  {titles} {full_name()}:
 	* [Knife in right hand, fork in left ]
-	{decrease_stat(temperment)}
-    {decrease_stat(wit)}
-{titles} {full_name()}: This is the way you've always eaten fish, but you see that no one is using a knife and everyone has a piece of bread in their hand.
+	{decrease_stat(temperment)}{decrease_stat(wit)}{titles} {full_name()}: This is the way you've always eaten fish, but you see that no one is using a knife and everyone has a piece of bread in their hand.
 {titles} {full_name()}:They glance at you, annoyed.
 
 	* [Napkin in right hand, fork in left ]
-	{decrease_stat(temperment)}
-    {decrease_stat(wit)}
-    {increase_stat(queer)}
-   {titles} {full_name()}: {NPC_full_name(Camilla, Camilla_title)} suppresses a smile at your lack of dining etiquette. #playSound camillaPositive
+	{decrease_stat(temperment)}{decrease_stat(wit)}{increase_stat(queer)} {titles} {full_name()}: {NPC_full_name(Camilla, Camilla_title)} suppresses a smile at your lack of dining etiquette. #playSound camillaPositive
     
 	* [Fork in right hand, bread in left ]
-	{increase_stat(temperment)}
-	{decrease_stat(queer)}
-	{titles} {full_name()}: Though it feels strange, everyone else at the table is eating this way as well. #playSound essexPositive
+	{increase_stat(temperment)}{decrease_stat(queer)}{titles} {full_name()}: Though it feels strange, everyone else at the table is eating this way as well. #playSound essexPositive
 -->pudding
 
 -(pudding)  {titles} {full_name()}:The footman takes the main course away, and places in front of you a small plate of the most Victorian of desserts, sponge pudding. Do you... 
  {titles} {full_name()}:
 	* [Eat it with a spoon ]
-    {decrease_stat(temperment)}
-    {decrease_stat(wit)}
-	{titles} {full_name()}: A woman near you sees you use your spoon, and mutters "that's not how Victoria does it."
+    {decrease_stat(temperment)}{decrease_stat(wit)}{titles} {full_name()}: A woman near you sees you use your spoon, and mutters "that's not how Victoria does it."
 	* [Eat it with a fork ]
-	{increase_stat(temperment)}
-	{decrease_stat(queer)}
-	{titles} {full_name()}: You, along with the majority of the table, eat your pudding with a fork. #playSound ascotPositive
+	{increase_stat(temperment)}{decrease_stat(queer)}{titles} {full_name()}: You, along with the majority of the table, eat your pudding with a fork. #playSound ascotPositive
 	
 	* [Eat it with your hands]
-	{increase_stat(romance)}
-    {decrease_stat(temperment)}
-    {increase_stat(queer)}
-    {titles} {full_name()}: The table is aghast at your barbarous consumption of the pudding, except for the {NPC_full_name(Bath, Bath_title)}. 
+	{increase_stat(romance)}{decrease_stat(temperment)}{increase_stat(queer)}{titles} {full_name()}: The table is aghast at your barbarous consumption of the pudding, except for Lord Bath 
     {titles} {full_name()}: His eyes are ablaze with lust after witnessing your passionate eating style. #playSound bathPositive
-        
-
 -->conversation_dinner
 
 =conversation_dinner
-#stopMusic dinnerMusic
  {titles} {full_name()}: There is a lull in the conversation
 
 -(dinner_options)
 {titles} {full_name()}:
-*[Talk to the man on your right]
+* [Talk to the man on your right]
 {
 - Bachloer_names == rando:
       ->dinner_rando
-      
 - Bachloer_names == Essex:
      ->dinner_Essex
-     
 - Bachloer_names == Ascot:
      ->dinner_Ascot
-     
 - Bachloer_names == Bath:   
      ->dinner_Bath
-     
 }
-
-+ {dinner_options < 2} [Talk to someone else]
++ {dinner_options < 3} [Talk to someone else]
      ** {Bachloer_names != Essex} [Talk to Lord Essex]
             ->dinner_Essex
      ** {Bachloer_names != Ascot} [Talk to Lord Ascot] 
@@ -607,47 +515,37 @@ to your left.
              ->dinner_Bath
      ** {Bachloer_names != Camilla} [Talk to Lady Camilla]
               ->dinner_Camilla
-  *->final_scene_prep  
+*->final_scene_prep  
   
 -(dinner_rando)
-      {titles} {full_name()}: The nameless gentleman had nothing of import to say.
-    -->dinner_options
+{titles} {full_name()}: The nameless gentleman had nothing of import to say.
+->dinner_options
 
 -(dinner_Essex)
 {NPC_full_name(Essex, Essex_title)}: This dinner is excellent. You looked as though you were especially enjoying your soup.
  {titles} {full_name()}:
 *[It was so tasty I thought about asking for seconds]
-	{decrease_stat(temperment)}
-     {NPC_full_name(Essex, Essex_title)}: Well, good that you didn't. It's most unbecoming to ask for second helpings of soup, unless it's chowder of course. #playSound essexNegative
+	{decrease_stat(temperment)}{NPC_full_name(Essex, Essex_title)}: Well, good that you didn't. It's most unbecoming to ask for second helpings of soup, unless it's chowder of course. #playSound essexNegative
      
 * [Actually, I preferred the fish.]
-   {decrease_stat(temperment)}
-   {NPC_full_name(Essex, Essex_title)}: ...Yes, the fish was finely cooked as well. I didn't realize you were a woman of such strong opinion. #playSound essexNegative
+   {decrease_stat(temperment)}{NPC_full_name(Essex, Essex_title)}: ...Yes, the fish was finely cooked as well. I didn't realize you were a woman of such strong opinion. #playSound essexNegative
    
 * [I find it best to not talk about food during dinner.]
-    {increase_stat(temperment)}
-    {increase_stat(temperment)}
-    {NPC_full_name(Essex, Essex_title)}: Oh... oh my. F-forgive me, Miss, I did not mean to act improper. Your senses must be better suited to etiquette than my own. #playSound essexPositive
+    {increase_stat(temperment)}{increase_stat(temperment)}{NPC_full_name(Essex, Essex_title)}: Oh... oh my. F-forgive me, Miss, I did not mean to act improper. Your senses must be better suited to etiquette than my own. #playSound essexPositive
 -->dinner_options
 
 -(dinner_Ascot)
-
 {NPC_full_name(Ascot, Ascot_title)}: I just returned from a trip to Yokohama. You really must go, it's so delightfully rustic! Do you have any interest in the Far East?
 {titles} {full_name()}:
 *[I've heard China is a beautiful country]
-  {decrease_stat(wit)}
-  {NPC_full_name(Ascot, Ascot_title)}: Really? From the photographs I've seen China looks as though its best days are well behind it. It cannot compare to how kirei Nippon is.#playSound ascotNegative
+  {decrease_stat(wit)}{NPC_full_name(Ascot, Ascot_title)}: Really? From the photographs I've seen China looks as though its best days are well behind it. It cannot compare to how kirei Nippon is.#playSound ascotNegative
   
 *[I adore Chinese artwork]
-  {increase_stat(wit)}
-  {NPC_full_name(Ascot, Ascot_title)}: Yes, the Chinese do make some dazzling porcelain. A shame that country itself is stuck in the past, so the people are backwards.  #playSound ascotPositive
+  {increase_stat(wit)}{NPC_full_name(Ascot, Ascot_title)}: Yes, the Chinese do make some dazzling porcelain. A shame that country itself is stuck in the past, so the people are backwards.  #playSound ascotPositive
     {NPC_full_name(Ascot, Ascot_title)}: Unlike Nippon! The people there are so noble, like they’re living in the days of yore.
     
 *[Japan is stupid]    
-    {decrease_stat(wit)}
-    {decrease_stat(wit)}
-    {NPC_full_name(Ascot, Ascot_title)}: ...Baka. #playSound ascotNegative
-    
+    {decrease_stat(wit)}{decrease_stat(wit)}{NPC_full_name(Ascot, Ascot_title)}: ...Baka. #playSound ascotNegative
 -->dinner_options
 
 -(dinner_Bath)
@@ -656,21 +554,15 @@ to your left.
 
 {titles} {full_name()}:
 * [I take some laudanum to help me sleep]
-{increase_stat(romance)} {increase_stat(romance)}
-{NPC_full_name(Bath, Bath_title)}: My dear friend Samuel’s daughter had the same habit! If you’re feeling listless, I hear there are some wonderful rejuvenating elixirs being created in France using the coca plant. #playSound bathPositive
-
+{increase_stat(romance)} {increase_stat(romance)}{NPC_full_name(Bath, Bath_title)}: My dear friend Samuel’s daughter had the same habit! If you’re feeling listless, I hear there are some wonderful rejuvenating elixirs being created in France using the coca plant. #playSound bathPositive
 *[I occasionally drink to excess]
-{increase_stat(romance)}
-{NPC_full_name(Bath, Bath_title)}: Only occasionally? Ah well, at least you’re not a teetotaler. Were you my wife, your tolerance to drink would quickly heighten. #playSound bathPositive
-
+{increase_stat(romance)}{NPC_full_name(Bath, Bath_title)}: Only occasionally? Ah well, at least you’re not a teetotaler. Were you my wife, your tolerance to drink would quickly heighten. #playSound bathPositive
 * [I stay away from vice]
-{decrease_stat(romance)}
-{NPC_full_name(Bath, Bath_title)}: It’s a shame when a beautiful willow has its roots stuck in the mud. #playSound bathNegative
-
+{decrease_stat(romance)}{NPC_full_name(Bath, Bath_title)}: It’s a shame when a beautiful willow has its roots stuck in the mud. #playSound bathNegative
 -->dinner_options
 
 -(dinner_Camilla)
-{titles} {full_name()}: {NPC_full_name(Camilla, Camilla_title)} is chatting with her mother.
+{titles} {full_name()}: Camilla is chatting with her mother.
 Marchioness of Derby: The strangest thing happened the other day. I was walking down Bond doing some shopping, and I could have sworn I saw a lady who looked just like you walk down Regent Street, Camilla.
 {NPC_full_name(Camilla, Camilla_title)}: Oh... that must have been someone else. You know I wouldn't be caught dead on Regent Street. 
 
@@ -683,20 +575,17 @@ Marchioness of Derby: Yes, I thought so at first, but I noticed this woman was w
 {NPC_full_name(Camilla, Camilla_title)}: I... it... what an unusual coincidence.
 
 *[Camilla and I met on Regent Street.]
-{decrease_stat(queer)}
- Marchioness of Derby: Ah, so I see you're the one who invited our unexpected guest.
+{decrease_stat(queer)}Marchioness of Derby: Ah, so I see you're the one who invited our unexpected guest.
   {NPC_full_name(Camilla, Camilla_title)}: *Camilla glares at you* #playSound camillaNegative
 
 *[Shhh, don't tell anyone. Regent Street has the most fashionable boutiques.]
-{NPC_full_name(Camilla, Camilla_title)}: I... yes, that's right. Hidden boutiques carrying dresses and accessories du jour.#playSound camillaPositive
+{increase_stat(queer)} {increase_stat(queer)}{NPC_full_name(Camilla, Camilla_title)}: I... yes, that's right. Hidden boutiques carrying dresses and accessories du jour.#playSound camillaPositive
 {NPC_full_name(Camilla, Camilla_title)}: Do promise you'll keep this quiet, will you mother?
 
 Marchiness of Derby: Really? Oh, how exciting! Your secret is safe with me, Camilla. Do you think you could show me these boutiques some time?
 
 {NPC_full_name(Camilla, Camilla_title)}: ...Perhaps, in the future.
-
 -->dinner_options
-
 
 === final_scene_prep ===
 #changeMusic finalMusic
@@ -710,22 +599,31 @@ Marchiness of Derby: Really? Oh, how exciting! Your secret is safe with me, Cami
  Ascot: {wit}
  Bath: {romance}
  
- { 
- -order(temperment, wit, romance, queer) == queer:
-     ->final_Camilla
- -order(temperment, wit, romance, queer) == temperment:
+ {dinner.dinner_Camilla && chit_Chat.talk_Camiila :
+     -> final_Camilla
+-else:
+    ->pick_bach
+ }
+ 
+ =pick_bach
+ {
+-order(temperment, wit, romance, queer) == temperment:
      ->final_Essex
 -order(temperment, wit, romance, queer) == wit:
      ->final_Ascot
 -else:
      ->final_Bath
 }
+ 
 
 =final_Camilla
+{-order(temperment, wit, romance, queer) != queer:
+     ->pick_bach
+-else:
 ~ending = Rossetti
 #loadScene parlor3
 ->ending_Camilla
-
+}
 
 =final_Essex
 ~ending = Primus
@@ -739,13 +637,11 @@ Marchiness of Derby: Really? Oh, how exciting! Your secret is safe with me, Cami
 #loadScene parlor3
 ->ending_Ascot
 
-
 =final_Bath
 ~ending = Blake
 ~ending_last = Percy
 #loadScene parlor3
 ->ending_Bath
-
 
 =ending_Camilla
 {NPC_full_name(Camilla, Camilla_title)}: Lord Essex proposed that he and I begin courting! He’s infatuated with me, thanks to your cloddish behavior letting me shine like a flawless gem.
