@@ -661,7 +661,7 @@ Marchiness of Derby: Really? Oh, how exciting! Your secret is safe with me, Cami
 
 {titles} {full_name()}: While working closely together, you and Camilla began to sneak off for secret love trysts.
 
-{titles} {full_name()}: Lord Essex was none the wiser, never guessing that your bond was more than a close friendship. #loadScene credits
+{titles} {full_name()}: Lord Essex was none the wiser, never guessing that your bond was more than a close friendship.#loadScene credits
 
 ->DONE
 
@@ -669,7 +669,7 @@ Marchiness of Derby: Really? Oh, how exciting! Your secret is safe with me, Cami
 {NPC_full_name(Essex, Essex_title)}: Pardon me miss, may I have a moment of your time?
 {NPC_full_name(Essex, Essex_title)}: All evening, you have been the picture of grace and social elegance. I’m not acquainted with your family, but you must come from immaculate breeding. 
 {NPC_full_name(Essex, Essex_title)}: As an Earl, I need to have a respectable wife. You, my dear, are the most respectable woman I believe I have ever had the good fortune of meeting.
-{NPC_full_name(Essex, Essex_title)}: Would you allow me the privilege of courting you?  #loadScene credits
+{NPC_full_name(Essex, Essex_title)}: Would you allow me the privilege of courting you?#loadScene credits
 
 ->DONE
 
@@ -678,7 +678,7 @@ Marchiness of Derby: Really? Oh, how exciting! Your secret is safe with me, Cami
 {NPC_full_name(Ascot, Ascot_title)}: You know, I don’t meet many ladies like you at parties like these. You invest yourself in discussions without losing yourself to them. You jest without descending into impropriety.
 {NPC_full_name(Ascot, Ascot_title)}: You even understand the greatness of Nippon!
 {NPC_full_name(Ascot, Ascot_title)}: I am of marriageable age, but I’ve been looking for more than just a wife. I want a companion in my travels and adventures. 
-{NPC_full_name(Ascot, Ascot_title)}: If I may be so presumptuous, would you be that companion? #loadScene credits
+{NPC_full_name(Ascot, Ascot_title)}: If I may be so presumptuous, would you be that companion?#loadScene credits
 
 ->DONE
 
@@ -687,7 +687,8 @@ Marchiness of Derby: Really? Oh, how exciting! Your secret is safe with me, Cami
 {NPC_full_name(Bath, Bath_title)}: I’ve been searching for a woman possessed of a delightful mania, with the fairness of a nymph, who has, before tonight, only visited me in my sweetest reveries. After encountering you, I can tell my search is at an end.
 {NPC_full_name(Bath, Bath_title)}: Would you do me the honor of letting me give you a carriage ride home?
 {NPC_full_name(Bath, Bath_title)}: Oh, but do me one favor. Pay little heed to the rumors surrounding my family’s estate. My fortunes may have temporarily deserted me, but that shant be the case for long!
-{NPC_full_name(Bath, Bath_title)}: At my chemist’s suggestion, I have invested in Brazilian railway stocks that are destined to provide a generous return. With me, you will never want for comfort... or satisfaction. #loadScene credits
+{NPC_full_name(Bath, Bath_title)}: At my chemist’s suggestion, I have invested in Brazilian railway stocks that are destined to provide a generous return. With me, you will never want for comfort... or satisfaction.#loadScene credits
+
 ->DONE
 
     
