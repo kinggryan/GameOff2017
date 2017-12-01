@@ -2011,10 +2011,6 @@ Tilemap:
     m_DirtyIndex: 0
   - serializedVersion: 1
     m_DirtyIndex: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!1001 &205004429
 Prefab:
   m_ObjectHideFlags: 0
@@ -2159,7 +2155,7 @@ MonoBehaviour:
   endVolume: 1
   startCutoff: 500
   endCutoff: 22000
-  transitionTime: 2
+  transitionTime: 5
 --- !u!4 &509892718 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4226305838293770, guid: 87c845855cc73f841b354e71b210d8e5,
@@ -2170,20 +2166,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4858358508469584, guid: 32dbf6fcda66a7f498fcfa8709d41640,
     type: 2}
   m_PrefabInternal: {fileID: 2114793754}
-=======
---- !u!114 &280449485 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114024558124957950, guid: 32dbf6fcda66a7f498fcfa8709d41640,
-    type: 2}
-  m_PrefabInternal: {fileID: 2114793754}
-  m_Script: {fileID: 11500000, guid: 9864250ef0cc17347883d8577f1b6f75, type: 3}
->>>>>>> 8604cec8c3993a0be737adb233c8ec47f8533dcf
-=======
->>>>>>> parent of 5f5dad6... Merge branch 'master' of https://github.com/kinggryan/GameOff2017
-=======
->>>>>>> parent of e2d9e15... basically done ink dialouge. soundevent script fix
-=======
->>>>>>> parent of 5f5dad6... Merge branch 'master' of https://github.com/kinggryan/GameOff2017
 --- !u!1001 &841897330
 Prefab:
   m_ObjectHideFlags: 0
