@@ -32,11 +32,6 @@ public class MusicEngine : MonoBehaviour {
 		}
 	}
 
-	 void OnLevelWasLoaded(int level) {
-        print("Loaded level " + level);
-		if (level == 1){
-            ChangeMusicWithName("parlorMusic");
-		}
-        
-    }
+
+
 }

@@ -8,6 +8,7 @@ public class SoundEvent : MonoBehaviour {
 
 public bool loop;
 public bool random;
+public bool sequence;
 public bool playOnAwake;
 [Range(0.0f, 1.0f)]
 public float volume;
@@ -33,10 +34,11 @@ public Transform listener;
 public bool threeDee;
 public float threeDeeMultiplier = 1;
 public float panMultiplier;
-public float externalVolumeModifier = 1;
+public float externalVolumeModifier;
 public float externalPitchModifier = 0;
 public AudioMixerGroup output;
 private AudioSource audioSource;
+public int elementToLoop;
     
 private float playerDistance;
 private float playerXDistance;
@@ -81,6 +83,9 @@ private bool soundPlayed = false;
         source.pitch = Mathf.Pow(1.05946f, actualPitch);
         if (audioClip.Length <= 1){
             source.loop = loop;
+        }
+        else if (loop && sequence && clip == elementToLoop){
+            source.loop = true;
         }
         
         audioSource = source;
@@ -146,7 +151,7 @@ private bool soundPlayed = false;
             }
         }
         else if (fadeOut){
-                fadeOutTimer -= Time.deltaTime / fadeInTime;
+                fadeOutTimer -= Time.deltaTime / fadeOutTime;
                 //print("fadeOutTimer: " + fadeOutTimer);
             if (fadeOutTimer <= 0)
             {

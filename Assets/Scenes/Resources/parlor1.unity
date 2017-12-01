@@ -208,6 +208,8 @@ MonoBehaviour:
   fadeOutTimer: 1
   audioClip:
   - {fileID: 8300000, guid: 036083e03feee064f9756eaea415983d, type: 3}
+  waitTime: 0
+  waitRange: 0
   listener: {fileID: 841897337}
   threeDee: 1
   threeDeeMultiplier: 1
@@ -3401,6 +3403,8 @@ MonoBehaviour:
   fadeOutTimer: 1
   audioClip:
   - {fileID: 8300000, guid: d40a0b72199a1864ea0b0b3a31131db4, type: 3}
+  waitTime: 0
+  waitRange: 0
   listener: {fileID: 841897337}
   threeDee: 1
   threeDeeMultiplier: 1
@@ -3636,6 +3640,8 @@ MonoBehaviour:
   fadeOutTimer: 1
   audioClip:
   - {fileID: 8300000, guid: 6cb55237afa278d41882ae573040f8f2, type: 3}
+  waitTime: 0
+  waitRange: 0
   listener: {fileID: 841897337}
   threeDee: 1
   threeDeeMultiplier: 1
@@ -3643,6 +3649,12 @@ MonoBehaviour:
   externalVolumeModifier: 1
   externalPitchModifier: 0
   output: {fileID: 243073045253021606, guid: 5d8468aeda94c7e46892ee1dff486895, type: 2}
+--- !u!114 &819926570 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114024558124957950, guid: 32dbf6fcda66a7f498fcfa8709d41640,
+    type: 2}
+  m_PrefabInternal: {fileID: 1506669637}
+  m_Script: {fileID: 11500000, guid: 9864250ef0cc17347883d8577f1b6f75, type: 3}
 --- !u!1001 &841897330
 Prefab:
   m_ObjectHideFlags: 0
@@ -6273,6 +6285,8 @@ MonoBehaviour:
   fadeOutTimer: 1
   audioClip:
   - {fileID: 8300000, guid: 1936a51cdd5f4ef428f743ba7d2f26fc, type: 3}
+  waitTime: 0
+  waitRange: 0
   listener: {fileID: 841897337}
   threeDee: 1
   threeDeeMultiplier: 1
@@ -6471,6 +6485,11 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -320
       objectReference: {fileID: 0}
+    - target: {fileID: 114027632223402480, guid: c1ea430b77b0b4accbf121a88e0b93f0,
+        type: 2}
+      propertyPath: soundEngine
+      value: 
+      objectReference: {fileID: 819926570}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1ea430b77b0b4accbf121a88e0b93f0, type: 2}
   m_IsPrefabParent: 0

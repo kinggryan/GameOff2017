@@ -9,12 +9,17 @@ public class MusicTransition : MonoBehaviour {
 
 	public float transitionTime;
 	public bool crossfade;
-	private bool transition;
+	public bool verticalLayer;
+	public float vertTargetVol;
+	public float vertStartVol;
+	public float fadeAfterTime;
+	private bool transition = false;
+	private float timer = 0;
 
 	public void ChangeMusic(){
 		print("changing music");
 		transition = true;
-		if (!crossfade){
+		if (!crossfade && !verticalLayer){
 			source.StopSound();
 		}
 	}
@@ -24,7 +29,13 @@ public class MusicTransition : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		source.externalVolumeModifier = 1;
-		destination.externalVolumeModifier = 0;
+		if (!verticalLayer){
+			destination.externalVolumeModifier = 0;
+		}
+		else {
+			 destination.externalVolumeModifier = vertStartVol;
+			print("vol mod: " + destination.externalVolumeModifier);
+		}
 	}
 
 
@@ -39,8 +50,30 @@ public class MusicTransition : MonoBehaviour {
 			if (crossfade){
 				source.externalVolumeModifier -= Time.deltaTime / transitionTime;
 				destination.externalVolumeModifier += Time.deltaTime / transitionTime;
+				if (source.externalVolumeModifier <= 0){
+					transition = false;
+				}
+			} 
+			else if (verticalLayer){
+				if (destination.externalVolumeModifier >= vertTargetVol && fadeAfterTime <= 0){
+					transition = false;
+				}
+				else if (timer >= fadeAfterTime){
+					destination.externalVolumeModifier -= (Time.deltaTime / transitionTime) * (vertTargetVol - vertStartVol);
+					if (destination.externalVolumeModifier <= 0){
+						timer = 0;
+						destination.externalVolumeModifier = 0;
+						transition = false;
+					}
+				}
+				else if (destination.externalVolumeModifier >= vertTargetVol){
+					timer += (Time.deltaTime / fadeAfterTime);
+				}
+				else {
+					destination.externalVolumeModifier += (Time.deltaTime / transitionTime) * (vertTargetVol - vertStartVol);
+				}
 			}
-			else {
+			else if (!verticalLayer){
 				if (source.fadeOutTimer <= 0.02f){
 					destination.externalVolumeModifier = 1;
 					destination.PlaySound();
@@ -48,8 +81,6 @@ public class MusicTransition : MonoBehaviour {
 				}
 
 			}
-			
 		}
-
 	}
 }
