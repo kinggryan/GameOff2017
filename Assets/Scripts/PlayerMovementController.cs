@@ -6,9 +6,16 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class PlayerMovementController : MonoBehaviour {
 
+	enum MovementMode {
+		Free,
+		Locked,
+		Animating
+	}
+
 	private float maxSpeed = 1.5f;
 	Vector2 movementVector = Vector2.zero;
 	float movementLerpSpeed = 20f;
+	MovementMode mode;
 
 	Animator animator;
 	Rigidbody2D rbody;
@@ -21,6 +28,10 @@ public class PlayerMovementController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (mode == MovementMode.Locked || mode == MovementMode.Animating) {
+			return;
+		}
+
 		var movementInput = new Vector2 (Input.GetAxis ("Horizontal"), Input.GetAxis ("Vertical"));
 		if (movementInput.magnitude > 1) {
 			movementInput.Normalize ();
