@@ -171,12 +171,18 @@ public class ConversationManager : MonoBehaviour {
 			return 0;
 		case "parlor1":
 			return 1;
-		case "dining":
+		case "diningEssex":
 			return 2;
-		case "parlor2":
-			return 3;
 		case "parlor3":
+			return 3;
+		case "credits":
 			return 4;
+		case "diningRando":
+			return 5;
+		case "diningAscot":
+			return 6;
+		case "diningBath":
+			return 7;
 		}
 		return -1;
 	}
